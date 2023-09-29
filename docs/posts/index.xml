@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on hugo-pure</title><link>/hugo-pure/posts/</link><description>Recent content in Posts on hugo-pure</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>©2023</copyright><lastBuildDate>Mon, 20 Feb 2023 11:49:46 +0800</lastBuildDate><atom:link href="/hugo-pure/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Sample</title><link>/hugo-pure/markdown-sample/</link><pubDate>Mon, 20 Feb 2023 11:49:46 +0800</pubDate><guid>/hugo-pure/markdown-sample/</guid><description>h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading Horizontal Rules Emphasis This is bold text
+This is bold text
+This is italic text
+This is italic text
+Strikethrough
+Blockquotes Blockquotes can also be nested&amp;hellip;
+&amp;hellip;by using additional greater-than signs right next to each other&amp;hellip;
+&amp;hellip;or with spaces between arrows.
+Lists Unordered
+Create a list by starting a line with +, -, or * Sub-lists are made by indenting 2 spaces: Marker character change forces new list start: Ac tristique libero volutpat at Facilisis in pretium nisl aliquet Nulla volutpat aliquam velit Very easy!</description></item></channel></rss>

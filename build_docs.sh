@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-hugo --minify -d docs -b /hugo-pure/
+hugo --minify \
+    --baseURL "/hugo-pure/" \
+    --destination docs \
+    --buildDrafts
