@@ -21,19 +21,19 @@
 </p>
 {{- end }}
 
-{{- with $page.Resources.Get "banner.webp" }}
-    {{- $banner := . }}
+{{- with $page.Resources.Get "poster.webp" }}
+    {{- $poster := . }}
     {{- $source := $page.Params.source }}
     {{- if $source }}
         <figure class="post-banner post-banner-mask">
             <a target="_blank" href="{{- $source -}}" rel="noreferrer">
-                <img src="{{- $banner.RelPermalink -}}">
+                <img src="{{- $poster.RelPermalink -}}">
                 <i class="fa-solid fa-play"></i>
             </a>
         </figure>
     {{- else }}
         <figure class="post-banner">
-            <img src="{{- $banner.RelPermalink -}}">
+            <img src="{{- $poster.RelPermalink -}}">
         </figure>
     {{- end }}
 {{- end }}
