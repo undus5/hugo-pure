@@ -1,0 +1,16 @@
+<div id="footer">
+    {{- .Site.Copyright }}
+    {{- $menus := .Site.Menus.footer }}
+    {{- range $menus }}
+        <a
+            href="{{- relURL .URL -}}"
+            {{ with .Params.targetBlank }}target="_blank"{{ end -}}
+        >
+            {{- with .Params.iconClass }}
+                <i class="{{- . -}}"></i>
+            {{- else }}
+                {{- .Title -}}
+            {{- end }}
+        </a>
+    {{- end }}
+</div>

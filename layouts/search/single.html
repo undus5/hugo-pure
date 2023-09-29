@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+<div id="s-form" class="pure-g cards-grid pure-form hidden">
+    <div class="pure-u-1 cards-unit">
+        <input id="s-input" placeholder="Google" type="text" class="pure-input-1" />
+    </div>
+    <div class="pure-u-1 cards-unit">
+        <button id="s-button" class="pure-button">搜索</button>
+    </div>
+</div>
+<p id="s-alert">
+If you can not see the input box here, it means you can not access Google,
+search function is unusable.
+</p>
+
+<script>
+const sForm = document.getElementById("s-form")
+const sAlert = document.getElementById("s-alert")
+
+fetch("https://www.google.com/generate_204", { mode: "no-cors" })
+.then(() => {
+    sAlert.classList.add("hidden")
+    sForm.classList.remove("hidden")
+})
+.catch(() => false)
+
+const sInput  = document.getElementById("s-input")
+const sButton  = document.getElementById("s-button")
+
+sButton.addEventListener("click", submit)
+sInput.addEventListener("keydown", event => {
+    if (event.key === "Enter")
+        submit()
+})
+
+function submit() {
+    let q = sInput.value.trim()
+    if (q === "") {
+        sInput.value = ""
+        return false
+    }
+    const { hostname } = window.location
+    q = "site:" + hostname + " " + q
+    const url = new URL("https://www.google.com/search")
+    url.searchParams.set("q", q)
+    window.open(url.toString(), "_blank")
+}
+</script>
+
+{{ end }}

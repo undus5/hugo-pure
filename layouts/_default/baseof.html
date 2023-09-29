@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{- partial "meta" . }}
+
+    {{- $css := slice }}
+    {{- $css = $css | append (resources.Get "purecss/pure-min.css") }}
+    {{- $css = $css | append (resources.Get "purecss/grids-responsive-min.css") }}
+    {{- $css = $css | append (resources.Get "css/menu.css") }}
+    {{- $css = $css | append (resources.Get "css/main.css") }}
+    {{- $css = $css | resources.Concat "bundle.css" }}
+    {{- $css = $css | resources.Minify }}
+    <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
+</head>
+
+<body>
+
+{{- partial "menu" . }}
+
+<div id="main">
+    {{ block "main" . }}{{ end }}
+</div>
+
+{{- partial "footer" . }}
+    
+{{- $js := slice }}
+{{- $js = $js | append (resources.Get "js/main.js") }}
+{{- $js = $js | resources.Concat "bundle.js" }}
+{{- $js = $js | resources.Minify }}
+<script src="{{- $js.RelPermalink -}}"></script>
+
+</body>
+</html>

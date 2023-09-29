@@ -1,0 +1,26 @@
+{{- $page := . }}
+<div id="menu">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            {{- $menus := .Site.Menus.main }}
+            {{- with .Site.Menus.secondary }}
+                {{- $menus = $menus | append . }}
+            {{- end }}
+            {{- range $menus }}
+                <li class="pure-menu-item {{ if eq $page.RelPermalink .URL }} pure-menu-selected {{ end -}}">
+                    <a
+                        class="pure-menu-link"
+                        href="{{- relURL .URL -}}"
+                        {{ with .Params.targetBlank }}target="_blank"{{ end -}}
+                    >
+                        {{- with .Params.iconClass }}
+                            <i class="{{- . -}}"></i>
+                        {{- else }}
+                            {{- .Title -}}
+                        {{- end }}
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+    </div>
+</div>

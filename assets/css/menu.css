@@ -1,0 +1,15 @@
+/* menu.css */
+
+#menu {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1em 0 0;
+}
+
+#menu .pure-menu-horizontal {
+    white-space: normal;
+}
+
+@media print {
+    #menu { display: none; }
+}

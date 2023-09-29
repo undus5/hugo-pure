@@ -1,0 +1,5 @@
+{{- $tags := . }}
+{{- range $tag_index, $tag := $tags }}
+    {{- if ne $tag_index 0 }},{{- end }}
+    <a class="post-tag" href="{{- $tag.RelPermalink -}}">{{- $tag.Title -}}</a>
+{{- end }}

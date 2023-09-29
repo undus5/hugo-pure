@@ -1,0 +1,16 @@
+{{ define "main" }}
+    {{/*}}
+    <h1 class="post-title">
+        {{- if .Title }}
+            {{- .Title }}
+        {{- else if .Site.Params.description }}
+            {{- .Site.Params.description -}}
+        {{- else }}
+            {{- .Site.Title -}}
+        {{- end }}
+    </h1>
+    {{*/}}
+    <div class="post-content">
+        {{- .Content }}
+    </div>
+{{ end }}

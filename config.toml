@@ -1,0 +1,70 @@
+baseURL        = "/"
+title          = "hugo-pure"
+languageCode   = "zh-cn"
+hasCJKLanguage = true
+paginate       = 6
+copyright      = "©2023"
+
+[params]
+  description = "Demo Site"
+  summaryLength = 70
+    
+[permalinks]
+  [permalinks.page]
+    posts    = "/:slugorfilename/"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    url        = "/"
+    title      = "Home"
+    weight     = 1
+  [[menu.main]]
+    identifier = "posts"
+    url        = "/posts/"
+    title      = "Posts"
+    weight     = 5
+
+  [[menu.footer]]
+    identifier= "rss"
+    url        = "/index.xml"
+    title      = "RSS"
+    weight     = 90
+    [menu.footer.params]
+      targetBlank = true
+      iconClass   = "fa-solid fa-rss"
+  [[menu.footer]]
+    identifier= "hugo"
+    url        = "https://gohugo.io/"
+    title      = "HUGO"
+    weight     = 99
+    [menu.footer.params]
+      targetBlank = true
+      iconClass   = "fa-solid fa-rocket"
+  [[menu.footer]]
+    identifier = "search"
+    url        = "/search/"
+    title      = "Search"
+    weight     = 999
+    [menu.footer.params]
+      targetBlank = false
+      iconClass   = "fa-solid fa-magnifying-glass"
+
+
+################################################################################
+# Following configs need to be copied to the main site config
+################################################################################
+
+pluralizeListTitles = false
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+# [outputFormats]
+#   [outputFormats.jsentries]
+#     baseName = "entries"
+#     mediaType = "text/javascript"
+#     
+# [outputs]
+#   home = ["html", "rss", "jsentries"]

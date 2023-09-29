@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{- partial "meta" . }}
+
+    {{- $css := slice }}
+    {{- $css = $css | append (resources.Get "purecss/pure-min.css") }}
+    {{- $css = $css | append (resources.Get "purecss/grids-responsive-min.css") }}
+    {{- $css = $css | append (resources.Get "sidebar/menu.css") }}
+    {{- $css = $css | append (resources.Get "css/main.css") }}
+    {{- $css = $css | resources.Concat "bundle-sidebar.css" }}
+    {{- $css = $css | resources.Minify }}
+    <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
+</head>
+
+<body>
+
+<div id="layout">
+    {{- partial "sidebar-menu" . }}
+
+    <div id="main-wrapper">
+        <div id="main">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+
+    {{- partial "footer" . }}
+</div>
+
+{{- $js := slice }}
+{{- $js = $js | append (resources.Get "sidebar/menu.js") }}
+{{- $js = $js | resources.Concat "bundle-sidebar.js" }}
+{{- $js = $js | resources.Minify }}
+<script src="{{- $js.RelPermalink -}}"></script>
+
+</body>
+</html>

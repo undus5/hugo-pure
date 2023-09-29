@@ -1,0 +1,40 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if $.IsHome -}}
+    {{- $pages = where $pctx.RegularPages "Type" "!=" "v" -}}
+{{- else -}}
+    {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- /* $pages = $pages.ByPublishDate.Reverse */ -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- $pages = (.Paginate $pages).Pages }}
+
+<ul class="pure-menu-list">
+    {{- range $pages }}
+        <section class="post">
+            <header class="post-header">
+                <a class="post-title__link" href="{{- .RelPermalink -}}">
+                    <h2 class="post-title">
+                        {{- if .Draft }}* {{ end }}
+                        {{ .Title -}}
+                    </h2>
+                </a>
+                <p class="post-meta">
+                    {{- with .Lastmod }}
+                        <span>{{- .Format "2006-01-02" -}}</span>
+                    {{- end }}
+                    {{- if .Params.tags }}
+                        {{- $tags := .GetTerms "tags" }}
+                        {{- partial "tags" $tags }}
+                    {{- end }}
+                </p>
+            </header>
+        </section>
+    {{- end }}
+</ul>
+
+{{- partial "pagination.html" . }}

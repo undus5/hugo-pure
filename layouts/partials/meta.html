@@ -1,0 +1,56 @@
+{{- $title := slice .Site.Title " - " }}
+{{- with .Site.Params.description }}
+    {{- $title = $title | append . }}
+{{- end }}
+{{- if .Title }}
+    {{- $title = slice .Title " - " .Site.Title  }}
+{{- end }}
+{{- $title = delimit $title "" }}
+{{- $pageTitle := $title }}
+{{- $previewTitle := $title }}
+
+{{- $description := "" }}
+{{ with .Site.Params.description }}
+    {{- $description = . }}
+{{- end }}
+
+{{- $ogType := "website" }}
+
+{{- if .IsPage }}
+    {{- $previewTitle = .Title }}
+
+    {{- $length := 70 }}
+    {{- with .Site.Params.summaryLength }}
+        {{- $length = . }}
+    {{- end }}
+    {{- $description = .Summary | truncate $length }}
+
+    {{- with .Resources.Get "banner.webp" }}
+        <meta name="twitter:image" content="{{- .Permalink -}}">
+        <meta property="og:image" content="{{- .Permalink -}}">
+    {{- end }}
+    
+    {{- $ogType = "article" }}
+{{- end }}
+
+<meta name="twitter:title" content="{{- $previewTitle -}}">
+<meta name="twitter:description" content="{{- $description -}}">
+
+<meta property="og:site_name" content="{{- .Site.Title -}}">
+<meta property="og:url" content="{{- .Permalink -}}">
+<meta property="og:type" content="{{- $ogType -}}">
+<meta property="og:title" content="{{- $previewTitle -}}">
+<meta property="og:description" content="{{- $description -}}">
+
+<meta name="description" content="{{- $description -}}">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<title>{{- $pageTitle -}}</title>
+<link rel="canonical" href="{{- .Permalink -}}">
+
+<!-- http://pixelartmaker.com/art/c8ad31c44b2d5a4 -->
+<link rel="icon" type="image/png" href="{{- relURL "favicon.png" -}}">
+<link rel="stylesheet" href="{{- relURL "fontawesome/css/all.min.css" -}}">
