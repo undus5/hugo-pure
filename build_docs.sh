@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-hugo --minify -d docs
+hugo --minify -d docs -b /hugo-pure/
