@@ -37,7 +37,7 @@
                     {{- $target = "_blank" }}
                 {{- end }}
                 <a target="{{- $target }}" href="{{- $link -}}" {{ if $source }}rel="noreferrer"{{ end }}>
-                    <figure class="post-banner post-banner-mask {{ if $source }}{{ else }}post-banner-fixed{{ end }}">
+                    <figure class="poster poster-mask {{ if $source }}{{ else }}poster-fixed{{ end }}">
                         <img src="{{- $poster.RelPermalink -}}">
                         {{- if $source }}
                             <i class="fa-solid fa-play"></i>

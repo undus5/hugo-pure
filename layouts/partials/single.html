@@ -25,14 +25,14 @@
     {{- $poster := . }}
     {{- $source := $page.Params.source }}
     {{- if $source }}
-        <figure class="post-banner post-banner-mask">
+        <figure class="poster poster-mask">
             <a target="_blank" href="{{- $source -}}" rel="noreferrer">
                 <img src="{{- $poster.RelPermalink -}}">
                 <i class="fa-solid fa-play"></i>
             </a>
         </figure>
     {{- else }}
-        <figure class="post-banner">
+        <figure class="poster">
             <img src="{{- $poster.RelPermalink -}}">
         </figure>
     {{- end }}
