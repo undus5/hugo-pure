@@ -1,0 +1,14 @@
+name     = "hugo-pure"
+license  = "MIT"
+homepage = "https://github.com/undus5/hugo-pure"
+demosite = "https://undus5.github.io/hugo-pure/"
+tags     = ["Blog", "Minimal", "Responsive", "Light", "Dark"]
+
+[author]
+    name = "Undus"
+    homepage = "https://www.undus.net"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.111.0"

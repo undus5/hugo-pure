@@ -1,7 +1,14 @@
 # hugo-pure
 
-Dark mode support (auto switch).
+A simple and clean Hugo theme
 
+## Features
+
+- Dark mode support (auto)
+
+- Responsive for mobile devices
+
+- No Javascript
 
 ## Usage
 
