@@ -1,0 +1,13 @@
+User-Agent: Google-Extended
+Disallow: /
+
+User-Agent: GPTBot
+Disallow: /
+User-Agent: ChatGPT-User
+Disallow: /
+
+User-Agent: Bingbot
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
