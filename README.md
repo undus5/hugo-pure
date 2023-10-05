@@ -6,7 +6,7 @@ A simple and clean Hugo theme
 
 - Dark mode support (auto)
 
-- Responsive for mobile devices
+- Responsive design
 
 - No Javascript
 

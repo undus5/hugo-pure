@@ -27,6 +27,14 @@ copyright      = "©2023"
     weight     = 5
 
   [[menu.footer]]
+    identifier = "github"
+    url        = "https://github.com/undus5/hugo-pure"
+    title      = "Github"
+    weight     = 70
+    [menu.footer.params]
+      targetBlank = true
+      iconClass   = "fa-brands fa-github"
+  [[menu.footer]]
     identifier= "rss"
     url        = "/index.xml"
     title      = "RSS"
