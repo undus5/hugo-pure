@@ -5,7 +5,6 @@
 :root {
     --max-width: 800px;
     --border-radius: 5px;
-    --line-height: 1.6em;
 }
 
 html {
@@ -44,7 +43,7 @@ pre code {
 }
 
 #main {
-    line-height: var(--line-height);
+    line-height: 1.6em;
     word-wrap: break-word;
 }
 
@@ -70,7 +69,7 @@ pre code {
 
 .post-title__link { text-decoration: none; }
 .post-title__link:hover { text-decoration: underline; }
-.post-title__content { line-height: var(--line-height); }
+.post-title { line-height: 1.2em; }
 
 .post-card {
     border: 1px solid #ccc;
