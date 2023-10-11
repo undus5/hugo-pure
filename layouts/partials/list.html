@@ -11,7 +11,12 @@
 {{- if ge $limit 1 -}}
     {{- $pages = $pages | first $limit -}}
 {{- end -}}
-{{- $pages = (.Paginate $pages).Pages }}
+{{- $pageSize := $pctx.Params.paginate }}
+{{- if $pageSize }}
+    {{- $pages = (.Paginate $pages $pageSize).Pages }}
+{{- else }}
+    {{- $pages = (.Paginate $pages).Pages }}
+{{- end }}
 
 {{- $types := slice "single" "double" }}
 {{- $ctype := $pctx.Params.column }}
