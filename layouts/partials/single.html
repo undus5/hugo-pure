@@ -7,11 +7,11 @@
 </h1>
 <p class="post-meta">
     {{- with $page.Lastmod }}
-        <span>Updated: {{ .Format "2006-01-02" }}</span>
+        <span>UPDATED : {{ .Format "2006-01-02" }}</span>
     {{- end }}
     {{- if and $page.Lastmod $page.Date }},{{- end }}
     {{- with $page.Date }}
-        <span>Created: {{ .Format "2006-01-02" }}</span>
+        <span>CREATED : {{ .Format "2006-01-02" }}</span>
     {{- end }}
     {{- if $page.Params.tags }}
         {{- range $tag_index, $tag := $page.GetTerms "tags" }}

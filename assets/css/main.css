@@ -29,7 +29,7 @@ pre code {
     display: hidden;
 }
 
-#main, #footer, cards-unit {
+#main, #footer, post-cards {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -43,7 +43,6 @@ pre code {
 }
 
 #main {
-    line-height: 1.6em;
     word-wrap: break-word;
 }
 
@@ -51,60 +50,33 @@ pre code {
     text-decoration: none;
 }
 
-.cards-grid {
-    gap: 1em;
-}
-
-.cards-unit {
-    max-width: 23em;
-}
-
 .pagination-wrapper {
     padding-top: 1em;
 }
 
-.post-card__title {
-    padding: 0 1em;
+.post-list {
+    gap: 1em;
 }
 
-.post-title__link { text-decoration: none; }
-.post-title__link:hover { text-decoration: underline; }
-.post-title { line-height: 1.2em; }
-
-.post-card {
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
+.post-list.column-double .post-card {
+    max-width: 23em;
 }
 
-.post-card__content {
-    padding: 0 1em;
-}
-
-.post-card .poster img{
-    border: none;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0;
-}
-
-.poster img,
-.post-content img
-{
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-}
+.post-card__title { text-decoration: none; }
+.post-card__title:hover { text-decoration: underline; }
+.post-card__title h2 { line-height: 1.2em; }
 
 .poster {
     position: relative;
 }
 
-.poster i {
-    font-size: 5em;
+.poster img {
+    border: 1px solid #ccc;
+    object-fit: cover;
 }
 
-.poster img {
-    border-radius: var(--border-radius);
-    object-fit: cover;
+.poster i {
+    font-size: 5em;
 }
 
 .fa-play {
@@ -124,14 +96,13 @@ pre code {
     display: block;
 }
 
-@media screen and (min-width: 48em) {
-    .poster-fixed {
-        height: 14em;
-    }
-    
-    .poster-fixed img {
-        height: 100%;
-    }
+.post-content {
+    line-height: 1.6em;
+}
+
+.post-content img
+{
+    border: 1px solid #ccc;
 }
 
 @media print {
@@ -147,7 +118,7 @@ pre {
     background-color: #f0f3f3;
 }
 
-.post-title__link,
+.post-card__title,
 .post-tag,
 .post-content a,
 #footer a
@@ -265,7 +236,7 @@ pre {
         background-color: #303446;
     }
 
-    .post-title__link,
+    .post-card__title,
     .post-tag,
     .post-content a,
     #footer a
