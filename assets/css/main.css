@@ -46,6 +46,10 @@ pre code {
     word-wrap: break-word;
 }
 
+.pure-menu-selected .pure-menu-link {
+    text-decoration: underline;
+}
+
 #footer a {
     text-decoration: none;
 }
@@ -61,10 +65,6 @@ pre code {
 .post-list.column-double .post-card {
     max-width: 23em;
 }
-
-.post-card__title { text-decoration: none; }
-.post-card__title:hover { text-decoration: underline; }
-.post-card__title h2 { line-height: 1.2em; }
 
 .poster {
     position: relative;

@@ -1,6 +1,6 @@
 # hugo-pure
 
-A simple and clean Hugo theme
+A simple and clean [Hugo](https://gohugo.io) theme
 
 ## Features
 
