@@ -6,18 +6,19 @@
     {{ $page.Title -}}
 </h1>
 <p class="post-meta">
-    {{- with $page.Lastmod }}
-        <span>UPDATED : {{ .Format "2006-01-02" }}</span>
-    {{- end }}
-    {{ if and $page.Lastmod $page.Date }},{{ end }}
-    {{- with $page.Date }}
-        <span>CREATED : {{ .Format "2006-01-02" }}</span>
+    {{- if $page.Date }}
+        {{- if ne $page.Date $page.Lastmod }}
+            <span>UPDATED : </span>
+            <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
+            <span>,</span>
+            <span>CREATED : </span>
+        {{- end }}
+        <span>{{ $page.Date.Format "2006-01-02" }}</span>
     {{- end }}
     {{- if $page.Params.tags }}
-        {{- range $tag_index, $tag := $page.GetTerms "tags" }}
-            ,
-            <a class="post-tag" href="{{$tag.Permalink}}">{{- $tag.Title -}}</a>
-        {{- end }}
+        {{ if $page.Date }},{{ end }}
+        {{- $tags := $page.GetTerms "tags" }}
+        {{- partial "tags" $tags }}
     {{- end }}
 </p>
 {{- end }}

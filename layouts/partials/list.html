@@ -61,10 +61,11 @@
                     </div>
                 {{- end }}
                 <p class="post-meta">
-                    {{- with .Lastmod }}
+                    {{- with .Date }}
                         <span>{{- .Format "2006-01-02" -}}</span>
                     {{- end }}
                     {{- if .Params.tags }}
+                        {{ if .Date }},{{ end }}
                         {{- $tags := .GetTerms "tags" }}
                         {{- partial "tags" $tags }}
                     {{- end }}
