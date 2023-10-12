@@ -1,7 +1,7 @@
 {{- $page := . }}
 
 {{- if gt $page.Paginator.TotalPages 1 }}
-<div aria-label="Pagination" class="pure-button-group pagination" role="group">
+<div aria-label="Pagination" class="pagination" role="group">
   {{- partial "partials/inline/pagination" $page }}
 </div>
 {{- end }}
@@ -9,20 +9,6 @@
 {{- define "partials/inline/pagination" }}
   {{- with .Paginator }}
     {{- $currentPageNumber := .PageNumber }}
-
-    {{- with .First }}
-      {{- if ne $currentPageNumber .PageNumber }}
-        <a href="{{ .URL }}" aria-label="First" class="pure-button" role="button">&laquo&laquo</a>
-      {{- else }}
-        <a aria-disabled="true" aria-label="First" class="pure-button pure-button-disabled" role="button">&laquo&laquo</a>
-      {{- end }}
-    {{- end }}
-
-    {{- with .Prev }}
-        <a href="{{ .URL }}" aria-label="Previous" class="pure-button" role="button">&laquo</a>
-    {{- else }}
-        <a aria-disabled="true" aria-label="Previous" class="pure-button pure-button-disabled" role="button">&laquo</a>
-    {{- end }}
 
     {{- $slots := 5 }}
     {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
@@ -32,25 +18,43 @@
     {{- end }}
 
     {{- range $k := seq $start $end }}
-      {{- if eq $.Paginator.PageNumber $k }}
-        <a aria-current="page" aria-label="Page {{ $k }}" class="pure-button pure-button-active" role="button">{{ $k }}</a>
-      {{- else }}
-        <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" class="pure-button" role="button">{{ $k }}</a>
+      {{- if not (eq $k (int $end)) }}
+        {{- if eq $.Paginator.PageNumber $k }}
+          <a
+            href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
+            aria-label="Page {{ $k }}"
+            aria-current="page"
+            class="pure-button pure-button-active"
+            role="button">{{ $k }}</a>
+        {{- else }}
+          <a
+            href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
+            aria-label="Page {{ $k }}"
+            class="pure-button"
+            role="button">{{ $k }}</a>
+        {{- end }}
       {{- end }}
-    {{- end }}
-
-    {{- with .Next }}
-        <a href="{{ .URL }}" aria-label="Next" class="pure-button" role="button">&raquo</a>
-    {{- else }}
-        <a aria-disabled="true" aria-label="Next" class="pure-button pure-button-disabled" role="button">&raquo</a>
     {{- end }}
 
     {{- with .Last }}
-      {{- if ne $currentPageNumber .PageNumber }}
-        <a href="{{ .URL }}" aria-label="Last" class="pure-button" role="button">&raquo&raquo</a>
+      {{- if lt $end .TotalPages }}
+      ...
+      {{- end }}
+      {{- if eq $currentPageNumber .PageNumber }}
+        <a
+          href="{{ .URL }}"
+          aria-label="Last"
+          aria-current="page"
+          class="pure-button pure-button-active"
+          role="button">{{ .TotalPages }}</a>
       {{- else }}
-        <a aria-disabled="true" aria-label="Last" class="pure-button pure-button-disabled" role="button">&raquo&raquo</a>
+        <a
+          href="{{ .URL }}"
+          aria-label="Last"
+          class="pure-button pure-button"
+          role="button">{{ .TotalPages }}</a>
       {{- end }}
     {{- end }}
+
   {{- end }}
 {{- end -}}

@@ -2,7 +2,7 @@
 
 {{- if $page.IsPage }}
 <h1 class="post-title">
-    {{- if $page.Draft }}* {{ end }}
+    {{- partial "draft-mark" $page }}
     {{ $page.Title -}}
 </h1>
 <p class="post-meta">

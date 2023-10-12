@@ -49,7 +49,10 @@
 
             <div class="post-card__content">
                 <a class="post-card__title" href="{{- .RelPermalink -}}">
-                    <h2>{{- if .Draft }}* {{ end }}{{ .Title -}}</h2>
+                    <h2>
+                        {{- partial "draft-mark" . }}
+                        {{ .Title -}}
+                    </h2>
                 </a>
 
                 {{- with .Description }}

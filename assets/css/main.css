@@ -4,7 +4,6 @@
 
 :root {
     --max-width: 800px;
-    --border-radius: 5px;
 }
 
 html {
@@ -29,6 +28,19 @@ pre code {
     display: hidden;
 }
 
+.pure-menu-selected .pure-menu-link {
+    text-decoration: underline;
+}
+
+.pure-button {
+    border-radius: 0;
+}
+
+.pagination .pure-button-active {
+    background-color: #999;
+    color: #eee;
+}
+
 #main, #footer, post-cards {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -44,10 +56,6 @@ pre code {
 
 #main {
     word-wrap: break-word;
-}
-
-.pure-menu-selected .pure-menu-link {
-    text-decoration: underline;
 }
 
 #footer a {
