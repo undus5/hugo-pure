@@ -119,13 +119,14 @@ pre {
 }
 
 .post-card__title,
-.post-tag,
 .post-content a,
 #footer a
 {
     color: #333;
 }
 
+.post-meta,
+.post-tag,
 .pure-menu-link {
     color: #666;
 }
@@ -237,13 +238,14 @@ pre {
     }
 
     .post-card__title,
-    .post-tag,
     .post-content a,
     #footer a
     {
         color: #ddd;
     }
 
+    .post-meta,
+    .post-tag,
     .pure-menu-link {
         color: #aaa;
     }

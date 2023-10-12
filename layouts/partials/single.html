@@ -9,13 +9,13 @@
     {{- with $page.Lastmod }}
         <span>UPDATED : {{ .Format "2006-01-02" }}</span>
     {{- end }}
-    {{- if and $page.Lastmod $page.Date }},{{- end }}
+    {{ if and $page.Lastmod $page.Date }},{{ end }}
     {{- with $page.Date }}
         <span>CREATED : {{ .Format "2006-01-02" }}</span>
     {{- end }}
     {{- if $page.Params.tags }}
         {{- range $tag_index, $tag := $page.GetTerms "tags" }}
-            {{- if ne $tag_index 0 }},{{- end }}
+            ,
             <a class="post-tag" href="{{$tag.Permalink}}">{{- $tag.Title -}}</a>
         {{- end }}
     {{- end }}
