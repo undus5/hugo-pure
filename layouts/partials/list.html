@@ -58,7 +58,7 @@
                 {{- with .Description }}
                     <p>{{- . }}</p>
                 {{- end }}
-                {{- if .Params.listWithContent }}
+                {{- if .Params.expanded }}
                     <div class="post-content">
                         {{- .Content }}
                     </div>

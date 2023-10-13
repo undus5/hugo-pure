@@ -28,6 +28,10 @@ pre code {
     display: hidden;
 }
 
+.prevent-default {
+    pointer-events: none;
+}
+
 .pure-menu-selected .pure-menu-link {
     text-decoration: underline;
 }

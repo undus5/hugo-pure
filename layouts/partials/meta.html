@@ -25,16 +25,16 @@
     {{- end }}
     {{- $description = .Summary | truncate $length }}
 
-    {{- with .Resources.Get "poster.webp" }}
-        <meta name="twitter:image" content="{{- .Permalink -}}">
+    {{- $image := .Resources.Get "poster.webp" }}
+    {{- if not $image }}
+        {{- $image = .Resources.Get "banner.webp" }}
+    {{- end }}
+    {{- with $image }}
         <meta property="og:image" content="{{- .Permalink -}}">
     {{- end }}
     
     {{- $ogType = "article" }}
 {{- end }}
-
-<meta name="twitter:title" content="{{- $previewTitle -}}">
-<meta name="twitter:description" content="{{- $description -}}">
 
 <meta property="og:site_name" content="{{- .Site.Title -}}">
 <meta property="og:url" content="{{- .Permalink -}}">
