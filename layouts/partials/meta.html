@@ -1,9 +1,6 @@
-{{- $title := slice .Site.Title " - " }}
-{{- with .Site.Params.description }}
-    {{- $title = $title | append . }}
-{{- end }}
+{{- $title := slice .Site.Title }}
 {{- if .Title }}
-    {{- $title = slice .Title " - " .Site.Title  }}
+    {{- $title = slice .Title " | " .Site.Title  }}
 {{- end }}
 {{- $title = delimit $title "" }}
 {{- $pageTitle := $title }}
@@ -14,8 +11,6 @@
     {{- $description = . }}
 {{- end }}
 
-{{- $ogType := "website" }}
-
 {{- if .IsPage }}
     {{- $previewTitle = .Title }}
 
@@ -23,7 +18,9 @@
     {{- with .Site.Params.summaryLength }}
         {{- $length = . }}
     {{- end }}
-    {{- $description = .Summary | truncate $length }}
+    {{- with .Params.description }}
+        {{- $description = . }}
+    {{- end }}
 
     {{- $image := .Resources.Get "poster.webp" }}
     {{- if not $image }}
@@ -32,13 +29,10 @@
     {{- with $image }}
         <meta property="og:image" content="{{- .Permalink -}}">
     {{- end }}
-    
-    {{- $ogType = "article" }}
 {{- end }}
 
 <meta property="og:site_name" content="{{- .Site.Title -}}">
 <meta property="og:url" content="{{- .Permalink -}}">
-<meta property="og:type" content="{{- $ogType -}}">
 <meta property="og:title" content="{{- $previewTitle -}}">
 <meta property="og:description" content="{{- $description -}}">
 
