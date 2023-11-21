@@ -4,6 +4,8 @@
 
 :root {
     --max-width: 800px;
+    --border-light: 1px solid #ccc;
+    --border-dark: 1px solid #444;
 }
 
 html {
@@ -86,11 +88,6 @@ pre code {
     position: relative;
 }
 
-.poster img {
-    border: 1px solid #ccc;
-    object-fit: cover;
-}
-
 .poster i {
     font-size: 5em;
 }
@@ -114,11 +111,6 @@ pre code {
 
 .post-content {
     line-height: 1.6em;
-}
-
-.post-content img
-{
-    border: 1px solid #ccc;
 }
 
 @media print {
@@ -145,6 +137,22 @@ pre {
 .post-tag,
 .pure-menu-link {
     color: #666;
+}
+
+@media (min-width: 48em) {
+    #main {
+        border-right: var(--border-light);
+    }
+}
+
+.poster img {
+    border: var(--border-light);
+    object-fit: cover;
+}
+
+.post-content img
+{
+    border: var(--border-light);
 }
 
 /* manni.css */
@@ -241,12 +249,9 @@ pre {
 /******************************************************************************/
 
 @media (prefers-color-scheme: dark) {
-    /* override */
-
-    /* from "base16-snazzy" */
     body {
-        background-color: #282a36;
-        color: #fff;
+        background-color: rgb(21, 22, 27);
+        color: rgb(216, 212, 207);
     }
 
     pre {
@@ -275,6 +280,20 @@ pre {
 
     .pure-menu-link:hover {
         background-color: #111;
+    }
+
+    @media (min-width: 48em) {
+        #main {
+            border-right: var(--border-dark);
+        }
+    }
+    .poster img {
+        border: var(--border-dark);
+        object-fit: cover;
+    }
+    .post-content img
+    {
+        border: var(--border-dark);
     }
 
     /* catppuccin-frappe.css */
