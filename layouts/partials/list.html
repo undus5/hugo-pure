@@ -78,6 +78,8 @@
     {{- end }}
 </div>
 
+{{- if gt .Paginator.TotalPages 1 }}
 <div class="pagination-wrapper">
     {{- partial "pagination.html" . }}
 </div>
+{{- end }}

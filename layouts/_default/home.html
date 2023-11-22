@@ -10,7 +10,9 @@
         {{- end }}
     </h1>
     {{*/}}
+    {{- with .Content }}
     <div class="post-content">
-        {{- .Content }}
+        {{- . }}
     </div>
+    {{- end }}
 {{ end }}

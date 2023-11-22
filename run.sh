@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-hugo server -D --bind 0.0.0.0 -p 1315
+hugo server \
+    --bind 0.0.0.0 \
+    --buildDrafts \
+    --port 1315

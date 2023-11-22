@@ -23,6 +23,8 @@
 </p>
 {{- end }}
 
+{{- with $page.Content }}
 <div class="post-content">
-    {{- $page.Content }}
+    {{- . }}
 </div>
+{{- end }}
