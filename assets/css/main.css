@@ -140,11 +140,6 @@ pre {
 }
 
 @media (min-width: 48em) {
-    /*
-    #main {
-        border-right: var(--border-light);
-    }
-    */
     .content-wrapper {
         border-right: var(--border-light);
     }
@@ -288,7 +283,7 @@ pre {
     }
 
     @media (min-width: 48em) {
-        #main {
+        .content-wrapper {
             border-right: var(--border-dark);
         }
     }
