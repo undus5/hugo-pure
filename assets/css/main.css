@@ -61,10 +61,13 @@ pre code {
 .post-list.column-double .post-card {
     max-width: 23em;
 }
-.post-card__title,
-.post-title
-{ margin: 0; }
-.post-content { line-height: 1.6em; }
+.post-card__title {
+    margin: 0;
+    margin-bottom: 0.8em;
+}
+div.post-meta {
+    margin-top: 1em;
+}
 
 .poster {
     position: relative;
@@ -84,6 +87,12 @@ pre code {
 .poster-mask:hover .fa-play { display: block; }
 
 .pagination-wrapper { padding-top: 1.6em; }
+
+.post-title { margin: 0; }
+.post-content {
+    padding-top: 1em;
+    line-height: 1.6em;
+}
 
 @media print {
     #footer { display: none; }
