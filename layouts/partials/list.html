@@ -58,11 +58,14 @@
                 {{- with .Description }}
                     <span>{{- . }}</span>
                 {{- end }}
+
                 {{- if .Params.expanded }}
                     <div class="post-content">
                         {{- .Content }}
                     </div>
                 {{- end }}
+
+                {{- if (or .Date .Params.tags) }}
                 <div class="post-meta">
                     {{- with .Date }}
                         <span>{{- .Format "2006-01-02" -}}</span>
@@ -73,6 +76,7 @@
                         {{- partial "tags" $tags }}
                     {{- end }}
                 </div>
+                {{- end }}
             </div>
         </article>
     {{- end }}

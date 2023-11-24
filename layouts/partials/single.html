@@ -5,6 +5,7 @@
     {{- partial "draft-mark" $page }}
     {{ $page.Title -}}
 </h1>
+{{- if (or $page.Date $page.Params.tags) }}
 <p class="post-meta">
     {{- if $page.Date }}
         {{- if ne $page.Date $page.Lastmod }}
@@ -21,6 +22,7 @@
         {{- partial "tags" $tags }}
     {{- end }}
 </p>
+{{- end }}
 {{- end }}
 
 {{- with $page.Content }}
