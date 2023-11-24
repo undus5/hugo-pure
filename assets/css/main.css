@@ -19,89 +19,59 @@
     --border-color-dark: #333333;
 }
 
-html {
-    overflow-y: scroll;
-}
-
-body {
-    min-height: 100vh;
-}
-
-figure {
-    margin: 0;
-}
-
-img {
-    width: 100%;
-}
+html { overflow-y: scroll; }
+body { min-height: 100vh; }
+img { width: 100%; }
+figure { margin: 0; }
+.hidden { display: hidden; }
+.prevent-default { pointer-events: none; }
 
 pre code {
     display: block;
     overflow-x: auto;
     padding: 1em;
 }
-
-.hidden {
-    display: hidden;
-}
-
-.prevent-default {
-    pointer-events: none;
-}
-
+.pure-button { border-radius: 0; }
 .pure-menu-selected .pure-menu-link {
     text-decoration: underline;
 }
 
-.pure-button {
-    border-radius: 0;
-}
-
-#main, #footer, post-cards {
+#main,
+#footer
+{
+    max-width: var(--max-width);
+    margin: 0 auto;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-#main,
-#footer {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 1em;
-}
-
 #main {
+    padding: 2em 1em;
     word-wrap: break-word;
 }
 
-#footer a {
-    text-decoration: none;
-}
-
-.pagination-wrapper {
-    padding-top: 1em;
-}
+#footer { padding: 1em 1em 3em; }
+#footer a { text-decoration: none; }
 
 .post-list {
-    gap: 1em;
+    row-gap: 2em;
+    column-gap: 1em;
 }
-
 .post-list.column-double .post-card {
     max-width: 23em;
 }
+.post-card__title,
+.post-title
+{ margin: 0; }
+.post-content { line-height: 1.6em; }
 
 .poster {
     position: relative;
+    margin-bottom: 0.8em;
 }
-
-.poster img {
-    object-fit: cover;
-}
-
-.poster i {
-    font-size: 5em;
-}
-
+.poster img { object-fit: cover; }
+.poster i { font-size: 5em; }
 .fa-play {
     display: none;
     position: absolute;
@@ -110,18 +80,10 @@ pre code {
     transform: translate(-50%, -50%);
     color: #fff;
 }
+.poster-mask:hover img { opacity: 0.7; }
+.poster-mask:hover .fa-play { display: block; }
 
-.poster-mask:hover img {
-    opacity: 0.7;
-}
-
-.poster-mask:hover .fa-play {
-    display: block;
-}
-
-.post-content {
-    line-height: 1.6em;
-}
+.pagination-wrapper { padding-top: 1.6em; }
 
 @media print {
     #footer { display: none; }
@@ -136,33 +98,27 @@ body {
     background-color: var(--body-background-light);
     color: var(--body-color-light);
 }
+pre { background-color: var(--pre-background-light); }
 
-pre {
-    background-color: var(--pre-background-light);
-}
-
-.post-card__title,
-.post-content a {
+.post-card__link,
+.post-content a
+{
     color: var(--body-color-light);
 }
 
 .post-meta,
 .post-tag,
 .pure-menu-link,
-#footer a {
+#footer a
+{
     color: var(--link-color-light);
 }
 
 .poster img,
-.post-content img {
+.post-content img
+{
     border: var(--border-style);
     border-color: var(--border-color-light);
-}
-@media (min-width: 48em) {
-    .content-wrapper {
-        border-right: var(--border-style);
-        border-color: var(--border-color-light);
-    }
 }
 
 .pagination .pure-button {
@@ -173,7 +129,14 @@ pre {
     background-color: var(--border-color-light);
 }
 
-/* manni.css */
+@media (min-width: 48em) {
+    .post-list {
+        border-right: var(--border-style);
+        border-color: var(--border-color-light);
+    }
+}
+
+/* rose-pine-dawn.css */
 /* Background */ .bg { color: #575279; background-color: #faf4ed; }
 /* PreWrapper */ .chroma { color: #575279; background-color: #ebe3dc; }
 /* Other */ .chroma .x {  }
@@ -271,12 +234,9 @@ pre {
         background-color: var(--body-background-dark);
         color: var(--body-color-dark);
     }
+    pre { background-color: var(--pre-background-dark); }
 
-    pre {
-        background-color: var(--pre-background-dark);
-    }
-
-    .post-card__title,
+    .post-card__link,
     .post-content a
     {
         color: var(--body-color-dark);
@@ -290,13 +250,11 @@ pre {
         color: var(--link-color-dark);
     }
 
-    /* dark mode dedicated */
     .pure-menu-selected .pure-menu-link,
     .pure-menu-selected .pure-menu-link:visited
     {
         color: var(--body-color-dark);
     }
-
     .pure-menu-link:hover {
         background-color: var(--pre-background-dark);
     }
@@ -307,12 +265,6 @@ pre {
         border-right: var(--border-style);
         border-color: var(--border-color-dark);
     }
-    @media (min-width: 48em) {
-        .content-wrapper {
-            border-right: var(--border-style);
-            border-color: var(--border-color-dark);
-        }
-    }
 
     .pagination .pure-button {
         background-color: var(--pre-background-dark);
@@ -320,6 +272,13 @@ pre {
     }
     .pagination .pure-button-active {
         background-color: var(--link-color-dark);
+    }
+
+    @media (min-width: 48em) {
+        .post-list {
+            border-right: var(--border-style);
+            border-color: var(--border-color-dark);
+        }
     }
 
     /* catppuccin-frappe.css */
