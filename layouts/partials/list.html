@@ -2,6 +2,7 @@
 {{- $pages := slice -}}
 {{- if $.IsHome -}}
     {{- $pages = where .Site.RegularPages "Section" "!=" "v" -}}
+    {{- $pages = where $pages "Type" "!=" "search" -}}
 {{- else -}}
     {{- $pages = $pctx.Pages -}}
 {{- end -}}

@@ -22,7 +22,7 @@ copyright      = "©2023"
     weight     = 1
   [[menu.main]]
     identifier = "posts"
-    url        = "/posts/"
+    url        = "/v/"
     title      = "Posts"
     weight     = 5
 
