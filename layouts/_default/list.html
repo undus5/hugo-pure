@@ -1,4 +1,6 @@
 {{ define "main" }}
     {{ partial "single" . }}
+    {{- if not .Params.hideList }}
     {{ partial "list" . }}
+    {{- end }}
 {{ end }}

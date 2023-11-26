@@ -1,4 +1,5 @@
 +++
+hideList = true
 +++
 
 # hugo-pure

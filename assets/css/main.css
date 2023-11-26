@@ -4,7 +4,7 @@
 
 :root {
     --max-width: 800px;
-    --border-style: 1px solid;
+    --border-solid: 1px solid;
 
     --body-background-light: #eeeeee;
     --pre-background-light: #dddddd;
@@ -55,8 +55,12 @@ pre code {
 #footer a { text-decoration: none; }
 
 .post-list {
-    row-gap: 2em;
+    row-gap: 1em;
     column-gap: 1em;
+}
+.post-card {
+    border-bottom: 1px dashed;
+    padding-bottom: 1em;
 }
 .post-list.column-double .post-card {
     max-width: 23em;
@@ -109,6 +113,13 @@ body {
 }
 pre { background-color: var(--pre-background-light); }
 
+.pure-menu-link:hover {
+    background-color: var(--pre-background-light);
+}
+
+.post-card {
+    border-color: var(--border-color-light);
+}
 .post-card__link,
 .post-content a
 {
@@ -126,7 +137,7 @@ pre { background-color: var(--pre-background-light); }
 .poster img,
 .post-content img
 {
-    border: var(--border-style);
+    border: var(--border-solid);
     border-color: var(--border-color-light);
 }
 
@@ -140,7 +151,6 @@ pre { background-color: var(--pre-background-light); }
 
 @media (min-width: 48em) {
     .post-list {
-        border-right: var(--border-style);
         border-color: var(--border-color-light);
     }
 }
@@ -245,6 +255,18 @@ pre { background-color: var(--pre-background-light); }
     }
     pre { background-color: var(--pre-background-dark); }
 
+    .pure-menu-selected .pure-menu-link,
+    .pure-menu-selected .pure-menu-link:visited
+    {
+        color: var(--body-color-dark);
+    }
+    .pure-menu-link:hover {
+        background-color: var(--pre-background-dark);
+    }
+
+    .post-card {
+        border-color: var(--border-color-dark);
+    }
     .post-card__link,
     .post-content a
     {
@@ -259,19 +281,10 @@ pre { background-color: var(--pre-background-light); }
         color: var(--link-color-dark);
     }
 
-    .pure-menu-selected .pure-menu-link,
-    .pure-menu-selected .pure-menu-link:visited
-    {
-        color: var(--body-color-dark);
-    }
-    .pure-menu-link:hover {
-        background-color: var(--pre-background-dark);
-    }
-
     .poster img,
     .post-content img
     {
-        border-right: var(--border-style);
+        border: var(--border-solid);
         border-color: var(--border-color-dark);
     }
 
@@ -285,7 +298,6 @@ pre { background-color: var(--pre-background-light); }
 
     @media (min-width: 48em) {
         .post-list {
-            border-right: var(--border-style);
             border-color: var(--border-color-dark);
         }
     }
