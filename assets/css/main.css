@@ -55,12 +55,8 @@ pre code {
 #footer a { text-decoration: none; }
 
 .post-list {
-    row-gap: 1em;
-    column-gap: 1em;
-}
-.post-card {
-    border-bottom: 1px dashed;
-    padding-bottom: 1em;
+    row-gap: 1.6em;
+    column-gap: 2em;
 }
 .post-list.column-double .post-card {
     max-width: 23em;
@@ -71,6 +67,16 @@ pre code {
 }
 div.post-meta {
     margin-top: 1em;
+}
+.post-card-corner {
+    padding-top: 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+.post-card-corner::after {
+    content: "";
+    width: 8px;
+    border-bottom: 5px solid;
 }
 
 .poster {
@@ -90,7 +96,7 @@ div.post-meta {
 .poster-mask:hover img { opacity: 0.7; }
 .poster-mask:hover .fa-play { display: block; }
 
-.pagination-wrapper { padding-top: 1.6em; }
+.pagination-wrapper { padding-top: 2em; }
 
 .post-title { margin: 0; }
 .post-content {
