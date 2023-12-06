@@ -21,7 +21,9 @@
 {{- partial "menu" . }}
 
 <div id="main">
+    <div class="corner-indicator corner-top"></div>
     {{ block "main" . }}{{ end }}
+    <div class="corner-indicator corner-bottom"></div>
 </div>
 
 {{- partial "footer" . }}

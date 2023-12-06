@@ -18,8 +18,6 @@
     {{- $pages = (.Paginate $pages).Pages }}
 {{- end }}
 
-<div class="post-list-corner"></div>
-
 {{- $types := slice "single" "double" }}
 {{- $ctype := $pctx.Params.column }}
 {{- if or (not $ctype) (not (in $types $ctype)) }}
@@ -83,8 +81,6 @@
         </article>
     {{- end }}
 </div>
-
-<div class="post-list-corner"></div>
 
 {{- if gt .Paginator.TotalPages 1 }}
 <div class="pagination-wrapper">

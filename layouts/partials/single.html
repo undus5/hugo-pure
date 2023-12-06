@@ -1,28 +1,28 @@
 {{- $page := . }}
 
 {{- if $page.IsPage }}
-<h1 class="post-title">
-    {{- partial "draft-mark" $page }}
-    {{ $page.Title -}}
-</h1>
-{{- if (or $page.Date $page.Params.tags) }}
-<p class="post-meta">
-    {{- if $page.Date }}
-        {{- if ne $page.Date $page.Lastmod }}
-            <span>UPDATED : </span>
-            <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
-            <span>,</span>
-            <span>CREATED : </span>
+    <h1 class="post-title">
+        {{- partial "draft-mark" $page }}
+        {{ $page.Title -}}
+    </h1>
+    {{- if (or $page.Date $page.Params.tags) }}
+    <p class="post-meta">
+        {{- if $page.Date }}
+            {{- if ne $page.Date $page.Lastmod }}
+                <span>UPDATED : </span>
+                <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
+                <span>,</span>
+                <span>CREATED : </span>
+            {{- end }}
+            <span>{{ $page.Date.Format "2006-01-02" }}</span>
         {{- end }}
-        <span>{{ $page.Date.Format "2006-01-02" }}</span>
+        {{- if $page.Params.tags }}
+            {{ if $page.Date }},{{ end }}
+            {{- $tags := $page.GetTerms "tags" }}
+            {{- partial "tags" $tags }}
+        {{- end }}
+    </p>
     {{- end }}
-    {{- if $page.Params.tags }}
-        {{ if $page.Date }},{{ end }}
-        {{- $tags := $page.GetTerms "tags" }}
-        {{- partial "tags" $tags }}
-    {{- end }}
-</p>
-{{- end }}
 {{- end }}
 
 {{- with $page.Content }}

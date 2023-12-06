@@ -54,6 +54,18 @@ pre code {
 #footer { padding: 1em 1em 3em; }
 #footer a { text-decoration: none; }
 
+.corner-indicator {
+    display: flex;
+    justify-content: flex-end;
+}
+.corner-indicator::after {
+    content: "";
+    width: 5px;
+    border-bottom: 5px solid;
+}
+.corner-top { margin-bottom: 0.5em; }
+.corner-bottom { margin-top: 0.5em; }
+
 .post-list {
     row-gap: 1.6em;
     column-gap: 2em;
@@ -89,24 +101,8 @@ div.post-meta {
 
 .pagination-wrapper { padding-top: 2em; }
 
-.post-title { margin: 0; }
-.post-content {
-    padding-top: 1em;
-    line-height: 1.6em;
-}
-
-@media (min-width: 48em) {
-    .post-list-corner {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 0.5em;
-    }
-    .post-list-corner::after {
-        content: "";
-        width: 5px;
-        border-bottom: 5px solid;
-    }
-}
+.post-title { margin-top: 0; }
+.post-content { line-height: 1.6em; }
 
 @media print {
     #footer { display: none; }
