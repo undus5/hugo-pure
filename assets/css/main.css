@@ -61,22 +61,13 @@ pre code {
 .post-list.column-double .post-card {
     max-width: 23em;
 }
+.post-card { padding-bottom: 1em; }
 .post-card__title {
     margin: 0;
     margin-bottom: 0.8em;
 }
 div.post-meta {
     margin-top: 1em;
-}
-.post-card-corner {
-    padding-top: 1em;
-    display: flex;
-    justify-content: flex-end;
-}
-.post-card-corner::after {
-    content: "";
-    width: 5px;
-    border-bottom: 3px solid;
 }
 
 .poster {
@@ -102,6 +93,19 @@ div.post-meta {
 .post-content {
     padding-top: 1em;
     line-height: 1.6em;
+}
+
+@media (min-width: 48em) {
+    .post-list-corner {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.5em;
+    }
+    .post-list-corner::after {
+        content: "";
+        width: 5px;
+        border-bottom: 5px solid;
+    }
 }
 
 @media print {
