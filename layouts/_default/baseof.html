@@ -11,6 +11,8 @@
     {{- $css = $css | append (resources.Get "purecss/grids-responsive-min.css") }}
     {{- $css = $css | append (resources.Get "css/menu.css") }}
     {{- $css = $css | append (resources.Get "css/main.css") }}
+    {{- $css = $css | append (resources.Get "css/syntax-light.css") }}
+    {{- $css = $css | append (resources.Get "css/syntax-dark.css") }}
     {{- $css = $css | resources.Concat "bundle.css" }}
     {{- $css = $css | resources.Minify }}
     <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
