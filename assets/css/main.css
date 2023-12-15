@@ -105,8 +105,10 @@ div.post-meta {
 .post-content { line-height: 1.6em; }
 
 @media print {
-    #footer { display: none; }
-    .poster { display: none; }
+    .corner-indicator,
+    .poster,
+    #footer
+    { display: none; }
 }
 
 /******************************************************************************/
