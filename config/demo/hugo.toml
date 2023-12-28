@@ -1,0 +1,18 @@
+# env: development
+
+[params]
+description = "Hugo theme: hugo-pure demo site"
+
+[languages]
+_merge = "none"
+[languages.en]
+languageCode = "en-us"
+languageName = "En"
+weight = 1
+title = "Hugo Theme: hugo-pure"
+
+[languages.zh]
+languageCode = "zh-cn"
+languageName = "中"
+weight = 3
+title = "Hugo 主题: hugo-pure"

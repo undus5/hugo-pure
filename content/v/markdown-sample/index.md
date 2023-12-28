@@ -3,8 +3,8 @@ title       = "Markdown Sample"
 description = "Markdown Syntax"
 date        = 2023-02-20T11:49:46+08:00
 lastmod     = 2023-02-22T11:49:46+08:00
+tags       = ["Markdown", "Demo"]
 #draft       = true
-#tags       = ["Markdown", "Demo"]
 #expanded   = true
 #source     = "https://www.youtube.com/watch?v = dQw4w9WgXcQ"
 +++
@@ -131,8 +131,7 @@ Autoconverted link https://github.com
 
 ## Images
 
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+![Minion](https://octodex.github.com/images/minion.png "Minion")
 
 Like links, Images also have a footnote style syntax
 
@@ -140,5 +139,4 @@ Like links, Images also have a footnote style syntax
 
 With a reference later in the document defining the URL location:
 
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
+[id]: https://octodex.github.com/images/minion.png "Minion"

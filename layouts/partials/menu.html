@@ -10,13 +10,13 @@
                 <li class="pure-menu-item {{ if eq $page.RelPermalink .URL }} pure-menu-selected {{ end -}}">
                     <a
                         class="pure-menu-link"
-                        href="{{- relURL .URL -}}"
+                        href="{{- relLangURL .URL -}}"
                         {{ with .Params.targetBlank }}target="_blank"{{ end -}}
                     >
                         {{- with .Params.iconClass }}
                             <i class="{{- . -}}"></i>
                         {{- else }}
-                            {{- .Title -}}
+                            {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
                         {{- end }}
                     </a>
                 </li>

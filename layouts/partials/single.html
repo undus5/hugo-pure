@@ -9,10 +9,10 @@
     <p class="post-meta">
         {{- if $page.Date }}
             {{- if ne $page.Date $page.Lastmod }}
-                <span>UPDATED : </span>
+                <span>{{- or (i18n "UPDATED") "UPDATED" | safeHTML }} : </span>
                 <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
                 <span>,</span>
-                <span>CREATED : </span>
+                <span>{{- or (i18n "CREATED") "CREATED" | safeHTML }} : </span>
             {{- end }}
             <span>{{ $page.Date.Format "2006-01-02" }}</span>
         {{- end }}

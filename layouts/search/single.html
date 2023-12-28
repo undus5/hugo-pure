@@ -11,8 +11,12 @@
     </div>
 </div>
 <p id="s-alert">
-If you can not see the input box here, it means you can not access Google,
-search function is unusable.
+{{- $msg := i18n "SEARCH_ALERT" }}
+{{- with $msg }}
+{{- $msg }}
+{{- else }}
+If you see this message, it means you can not access Google, search function is unusable.
+{{- end }}
 </p>
 
 <script>

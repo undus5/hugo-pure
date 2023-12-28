@@ -1,0 +1,66 @@
+# default configuration
+
+baseURL = "/"
+paginate = 4
+pluralizeListTitles = false
+hasCJKLanguage = true
+defaultContentLanguage = 'en'
+
+[markup]
+_merge = "deep"
+[markup.highlight]
+_merge = "deep"
+noClasses = false
+    
+[permalinks]
+[permalinks.page]
+v = "/:slugorfilename/"
+
+[languages]
+[languages.en]
+languageCode = "en-us"
+languageName = "En"
+weight = 1
+title = "Hugo Theme: hugo-pure"
+
+[menus]
+[[menus.main]]
+identifier = "home"
+url        = "/"
+name      = "Home"
+weight     = 1
+
+[[menus.footer]]
+identifier = "copyright"
+url        = "/"
+name      = "@2023"
+weight     = 1
+
+[[menus.footer]]
+identifier= "rss"
+url        = "/index.xml"
+name      = "RSS"
+weight     = 3
+[[menus.footer.params]]
+  targetBlank = true
+  iconClass   = "fa-solid fa-rss"
+
+[[menus.footer]]
+identifier = "search"
+url        = "/search/"
+name      = "Search"
+weight     = 5
+[[menus.footer.params]]
+  targetBlank = false
+  iconClass   = "fa-solid fa-magnifying-glass"
+
+#[outputFormats]
+#_merge = "deep"
+#[outputFormats.jsentries]
+#_merge = "deep"
+#baseName = "entries"
+#mediaType = "text/javascript"
+#    
+#[outputs]
+#_merge = "deep"
+#home = ["html", "rss", "jsentries"]

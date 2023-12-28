@@ -14,10 +14,6 @@
 {{- if .IsPage }}
     {{- $previewTitle = .Title }}
 
-    {{- $length := 70 }}
-    {{- with .Site.Params.summaryLength }}
-        {{- $length = . }}
-    {{- end }}
     {{- with .Params.description }}
         {{- $description = . }}
     {{- end }}

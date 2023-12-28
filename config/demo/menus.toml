@@ -1,0 +1,46 @@
+# env: development
+
+[[main]]
+identifier = "home"
+url        = "/"
+name      = "Home"
+weight     = 1
+
+[[main]]
+identifier = "posts"
+url        = "/v/"
+name      = "Posts"
+weight     = 3
+
+[[footer]]
+identifier = "copyright"
+url        = "/"
+name      = "@2023"
+weight     = 1
+
+[[footer]]
+identifier= "rss"
+url        = "/index.xml"
+name      = "RSS"
+weight     = 3
+[footer.params]
+  targetBlank = true
+  iconClass   = "fa-solid fa-rss"
+
+[[footer]]
+identifier = "search"
+url        = "/search/"
+name      = "Search"
+weight     = 5
+[footer.params]
+  targetBlank = false
+  iconClass   = "fa-solid fa-magnifying-glass"
+
+[[footer]]
+identifier = "github"
+url        = "https://github.com/undus5/hugo-pure"
+name      = "Github"
+weight     = 9
+[footer.params]
+  targetBlank = true
+  iconClass   = "fa-brands fa-github"

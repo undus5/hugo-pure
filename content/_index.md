@@ -6,19 +6,28 @@ hideList = true
 
 # hugo-pure
 
-A simple and clean Hugo theme
+A simple and clean [Hugo](https://gohugo.io) theme
 
 ## Features
 
-- Dark mode support (auto)
+- Responsive design (Mobile device support)
 
-- Responsive design
+- Dark mode support (autoswitch)
 
 - No Javascript
+
+- Multilingual support
 
 ## Usage
 
 ```
-git submodule add https://github.com/undus5/hugo-pure themes/hugo-pure
-echo "theme = 'hugo-pure'" >> config.toml
+# Clone theme to your own project
+$ git submodule add https://github.com/undus5/hugo-pure themes/hugo-pure
+
+# Add theme to your project's config file
+$ echo "theme = 'hugo-pure'" >> config.toml
+
+# Or you can running demo directly
+$ cd hugo-pure
+$ ./run_demo.sh
 ```
