@@ -1,7 +1,10 @@
 {{- $pctx := . -}}
 {{- $pages := slice -}}
 {{- if $.IsHome -}}
-    {{- $pages = where .Site.RegularPages "Section" "!=" "v" -}}
+    {{- $pages = .Site.RegularPages -}}
+    {{- if ne hugo.Environment "demo" }}
+    {{- $pages = where $pages "Section" "!=" "v" -}}
+    {{- end }}
     {{- $pages = where $pages "Type" "!=" "search" -}}
 {{- else -}}
     {{- $pages = $pctx.Pages -}}

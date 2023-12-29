@@ -23,7 +23,7 @@ $ git submodule add https://github.com/undus5/hugo-pure themes/hugo-pure
 # Add theme to your project's config file
 $ echo "theme = 'hugo-pure'" >> config.toml
 
-# Or you can running demo directly
+# Or you can run demo directly
 $ cd hugo-pure
 $ ./run_demo.sh
 ```

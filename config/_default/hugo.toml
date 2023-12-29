@@ -3,8 +3,17 @@
 baseURL = "/"
 paginate = 4
 pluralizeListTitles = false
+languageCode = "en-us"
 hasCJKLanguage = true
-defaultContentLanguage = 'en'
+title = "Hugo Theme: hugo-pure"
+#defaultContentLanguage = 'en'
+
+#[languages]
+#[languages.en]
+#languageCode = "en-us"
+#languageName = "En"
+#weight = 1
+#title = "Hugo Theme: hugo-pure"
 
 [markup]
 _merge = "deep"
@@ -15,13 +24,6 @@ noClasses = false
 [permalinks]
 [permalinks.page]
 v = "/:slugorfilename/"
-
-[languages]
-[languages.en]
-languageCode = "en-us"
-languageName = "En"
-weight = 1
-title = "Hugo Theme: hugo-pure"
 
 [menus]
 [[menus.main]]
@@ -60,7 +62,7 @@ weight     = 5
 #_merge = "deep"
 #baseName = "entries"
 #mediaType = "text/javascript"
-#    
+
 #[outputs]
 #_merge = "deep"
 #home = ["html", "rss", "jsentries"]

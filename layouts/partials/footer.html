@@ -15,7 +15,7 @@
 </a>
 {{- end }}
 
-{{- if .IsTranslated }}
+{{- if and .Site.IsMultiLingual .IsTranslated }}
 {{- range $i, $p := .AllTranslations }}
     {{- if gt $i 0 }}|{{ end }}
     {{- if eq $p.Lang $pctx.Lang -}}

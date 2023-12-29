@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-script_dir=$(dirname $(realpath $0))
+script_dir=$(dirname $(readlink -f ${BASH_SOURCE[0]}))
 
 cd ${script_dir}
 
