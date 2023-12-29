@@ -7,14 +7,14 @@ defaultContentLanguage = 'en'
 [languages.en]
 languageCode = "en-us"
 languageName = "En"
-weight = 1
-title = "Hugo Theme: hugo-pure"
+weight       = 1
+title        = "Hugo Theme: hugo-pure"
 
 [languages.zh]
 languageCode = "zh-cn"
 languageName = "中"
-weight = 3
-title = "Hugo 主题: hugo-pure"
+weight       = 3
+title        = "Hugo 主题: hugo-pure"
 
 [params]
 description = "Hugo theme: hugo-pure demo site"

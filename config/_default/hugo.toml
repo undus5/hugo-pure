@@ -1,24 +1,28 @@
 # default configuration
 
-baseURL = "/"
-paginate = 4
+baseURL             = "/"
+title               = "Hugo Theme: hugo-pure"
+hasCJKLanguage      = true
 pluralizeListTitles = false
-languageCode = "en-us"
-hasCJKLanguage = true
-title = "Hugo Theme: hugo-pure"
+paginate            = 4
+
+languageCode           = "en-us"
 #defaultContentLanguage = 'en'
 
 #[languages]
 #[languages.en]
 #languageCode = "en-us"
 #languageName = "En"
-#weight = 1
-#title = "Hugo Theme: hugo-pure"
+#weight       = 1
+#title        = "Hugo Theme: hugo-pure"
+
+#[params]
+#disableCornerIndicator = true
 
 [markup]
-_merge = "deep"
+_merge    = "deep"
 [markup.highlight]
-_merge = "deep"
+_merge    = "deep"
 noClasses = false
     
 [permalinks]
@@ -44,8 +48,8 @@ pageRef    = "/index.xml"
 name       = "RSS"
 weight     = 3
 [[menus.footer.params]]
-  targetBlank = true
-  iconClass   = "fa-solid fa-rss"
+targetBlank = true
+iconClass   = "fa-solid fa-rss"
 
 [[menus.footer]]
 identifier = "search"
@@ -53,16 +57,16 @@ pageRef    = "/search"
 name       = "Search"
 weight     = 5
 [[menus.footer.params]]
-  targetBlank = false
-  iconClass   = "fa-solid fa-magnifying-glass"
+targetBlank = false
+iconClass   = "fa-solid fa-magnifying-glass"
 
 #[outputFormats]
-#_merge = "deep"
+#_merge    = "deep"
 #[outputFormats.jsentries]
-#_merge = "deep"
-#baseName = "entries"
+#_merge    = "deep"
+#baseName  = "entries"
 #mediaType = "text/javascript"
 
 #[outputs]
-#_merge = "deep"
-#home = ["html", "rss", "jsentries"]
+#_merge    = "deep"
+#home      = ["html", "rss", "jsentries"]
