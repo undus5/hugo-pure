@@ -11,12 +11,7 @@
     </div>
 </div>
 <p id="s-alert">
-{{- $msg := i18n "SEARCH_ALERT" }}
-{{- with $msg }}
-{{- $msg }}
-{{- else }}
-If you see this message, it means you can not access Google, search function is unusable.
-{{- end }}
+{{- i18n "SEARCH_ALERT" }}
 </p>
 
 <script>

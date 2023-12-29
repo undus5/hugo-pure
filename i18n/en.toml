@@ -1,0 +1,5 @@
+# i18n en
+
+CREATED = "CREATED"
+UPDATED = "UPDATED"
+SEARCH_ALERT = "If you see this message, it means you can not access Google, search function is unusable."
