@@ -1,26 +1,41 @@
-{{- $page := . }}
+{{- $pctx := . }}
 <div id="menu">
-    <div class="pure-menu pure-menu-horizontal">
-        <ul class="pure-menu-list">
-            {{- $menus := .Site.Menus.main }}
-            {{- with .Site.Menus.secondary }}
-                {{- $menus = $menus | append . }}
-            {{- end }}
-            {{- range $menus }}
-                <li class="pure-menu-item {{ if eq $page.RelPermalink .URL }} pure-menu-selected {{ end -}}">
-                    <a
-                        class="pure-menu-link"
-                        href="{{- relLangURL .URL -}}"
-                        {{ with .Params.targetBlank }}target="_blank"{{ end -}}
-                    >
-                        {{- with .Params.iconClass }}
-                            <i class="{{- . -}}"></i>
-                        {{- else }}
-                            {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
-                        {{- end }}
-                    </a>
-                </li>
-            {{- end }}
-        </ul>
-    </div>
+<div class="pure-menu pure-menu-horizontal">
+<ul class="pure-menu-list">
+
+{{- $menus := .Site.Menus.main }}
+{{- with .Site.Menus.secondary }}
+    {{- $menus = $menus | append . }}
+{{- end }}
+
+{{- range $menus }}
+{{- $url := .URL }}
+{{- if .Page }}
+    {{- $url = .Page.RelPermalink }}
+    {{- if and .Params.format }}
+        {{- $fmt := (.Page.AlternativeOutputFormats).Get .Params.format }}
+        {{- if not $fmt }}
+        {{- continue }}
+        {{- else }}
+        {{- $url = $fmt.RelPermalink }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+<li class="pure-menu-item {{ if eq $pctx.RelPermalink $url }} pure-menu-selected {{ end -}}">
+    <a
+        class="pure-menu-link"
+        href="{{- $url -}}"
+        {{ with .Params.targetBlank }}target="_blank"{{ end -}}
+    >
+        {{- with .Params.iconClass }}
+            <i class="{{- . -}}"></i>
+        {{- else }}
+            {{- .Name | safeHTML -}}
+        {{- end }}
+    </a>
+</li>
+{{- end }}
+
+</ul>
+</div>
 </div>

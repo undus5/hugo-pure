@@ -1,0 +1,47 @@
+# demo menus en
+
+[[main]]
+identifier = "home_test"
+pageRef = "/"
+name = "Home"
+weight = 1
+
+[[main]]
+identifier = "tags_test"
+pageRef = "/tags/"
+name = "Tags"
+weight = 9
+
+[[footer]]
+identifier = "copyright"
+pageRef = "/"
+name = "©2023"
+weight = 1
+
+[[footer]]
+identifier = "rss"
+pageRef    = "/"
+name       = "RSS"
+weight     = 3
+[[footer.params]]
+  targetBlank  = true
+  iconClass    = "fa-solid fa-rss"
+  format = "rss"
+
+[[footer]]
+identifier = "search"
+pageRef    = "/search"
+name       = "Search"
+weight     = 5
+[[footer.params]]
+  targetBlank = false
+  iconClass   = "fa-solid fa-magnifying-glass"
+
+[[footer]]
+identifier = "github"
+url        = "https://github.com/undus5/hugo-pure"
+name       = "Github"
+weight     = 9
+[[footer.params]]
+  targetBlank = true
+  iconClass   = "fa-brands fa-github"

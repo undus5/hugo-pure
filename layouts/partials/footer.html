@@ -3,14 +3,26 @@
 {{- $menus := .Site.Menus.footer }}
 
 {{- range $menus }}
+{{- $url := .URL }}
+{{- if .Page }}
+    {{- $url = .Page.RelPermalink }}
+    {{- if and .Params.format }}
+        {{- $fmt := (.Page.AlternativeOutputFormats).Get .Params.format }}
+        {{- if not $fmt }}
+        {{- continue }}
+        {{- else }}
+        {{- $url = $fmt.RelPermalink }}
+        {{- end }}
+    {{- end }}
+{{- end }}
 <a
-    href="{{- relLangURL .URL -}}"
+    href="{{- $url -}}"
     {{ with .Params.targetBlank }}target="_blank"{{ end -}}
 >
     {{- with .Params.iconClass }}
         <i class="{{- . -}}"></i>
     {{- else }}
-        {{- or (i18n .Identifier) .Name | safeHTML -}}
+        {{- .Name | safeHTML -}}
     {{- end }}
 </a>
 {{- end }}
