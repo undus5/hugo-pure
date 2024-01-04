@@ -5,6 +5,13 @@
         {{- partial "draft-mark" $page }}
         {{ $page.Title -}}
     </h1>
+
+    {{- with $page.Description }}
+    <p class="post-meta">
+    {{- . }}
+    </p>
+    {{- end }}
+
     {{- if (or $page.Date $page.Params.tags) }}
     <p class="post-meta">
         {{- if $page.Date }}
