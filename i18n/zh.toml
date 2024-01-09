@@ -4,4 +4,4 @@ CREATED = "创建"
 UPDATED = "更新"
 SEARCH_ALERT = "如果你能看到这条信息, 说明你无法访问 Google 服务, 无法使用搜索功能."
 
-DEMO = "演示"
+DEMOTAG = "演示标签"

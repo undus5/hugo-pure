@@ -1,6 +1,6 @@
 # default configuration
 
-baseURL             = "http://localhost/"
+baseURL             = "/"
 title               = "Hugo Theme: hugo-pure"
 hasCJKLanguage      = true
 pluralizeListTitles = false
