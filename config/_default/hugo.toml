@@ -1,6 +1,6 @@
 # default configuration
 
-baseURL             = "/"
+baseURL             = "http://localhost/"
 title               = "Hugo Theme: hugo-pure"
 hasCJKLanguage      = true
 pluralizeListTitles = false
@@ -24,6 +24,8 @@ _merge    = "deep"
 [markup.highlight]
 _merge    = "deep"
 noClasses = false
+[markup.tableOfContents]
+endLevel  = 2
     
 [permalinks]
 [permalinks.page]

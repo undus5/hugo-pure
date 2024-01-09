@@ -1,13 +1,13 @@
 # demo menus zh
 
 [[main]]
-identifier = "home_test"
+identifier = "home_demo"
 pageRef    = "/"
 name       = "首页"
 weight     = 1
 
 [[main]]
-identifier = "tags_test"
+identifier = "tags_demo"
 pageRef    = "/tags/"
 name       = "分类"
 weight     = 9

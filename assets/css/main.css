@@ -104,9 +104,35 @@ div.post-meta {
 .post-title { margin-top: 0; }
 .post-content { line-height: 1.6em; }
 
+.toc-anchor {
+    display: none;
+    position: sticky;
+    top: 2em;
+}
+
+.toc-wrapper {
+    position: absolute;
+    right: -10em;
+}
+
+#TableOfContents ul {
+    margin: 0;
+    padding: 0;
+    width: 8em;
+}
+
+@media (min-width: 70em) {
+    .toc-anchor { display: block; }
+}
+
+@media (max-width: 48em) {
+    .corner-indicator { display: none; }
+}
+
 @media print {
     .corner-indicator,
     .poster,
+    .toc-anchor,
     #footer
     { display: none; }
 }

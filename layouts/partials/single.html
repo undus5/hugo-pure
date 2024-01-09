@@ -16,10 +16,10 @@
     <p class="post-meta">
         {{- if $page.Date }}
             {{- if ne $page.Date $page.Lastmod }}
-                <span>{{- or (i18n "UPDATED") "UPDATED" | safeHTML }} : </span>
+                <span>{{- or (i18n "UPDATED") "Updated" | safeHTML }} : </span>
                 <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
                 <span>,</span>
-                <span>{{- or (i18n "CREATED") "CREATED" | safeHTML }} : </span>
+                <span>{{- or (i18n "CREATED") "Created" | safeHTML }} : </span>
             {{- end }}
             <span>{{ $page.Date.Format "2006-01-02" }}</span>
         {{- end }}
@@ -32,8 +32,16 @@
     {{- end }}
 {{- end }}
 
-{{- with $page.Content }}
+{{- if $page.Content }}
 <div class="post-content">
-    {{- . }}
+    {{- if $page.Params.enableTOC }}
+    <div class="toc-anchor">
+        <div class="toc-wrapper">
+        {{- $page.TableOfContents }}
+        </div>
+    </div>
+    {{- end }}
+
+    {{- $page.Content }}
 </div>
 {{- end }}

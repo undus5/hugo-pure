@@ -1,13 +1,13 @@
 # demo menus en
 
 [[main]]
-identifier = "home_test"
+identifier = "home_demo"
 pageRef = "/"
 name = "Home"
 weight = 1
 
 [[main]]
-identifier = "tags_test"
+identifier = "tags_demo"
 pageRef = "/tags/"
 name = "Tags"
 weight = 9

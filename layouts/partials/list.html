@@ -2,8 +2,9 @@
 {{- $pages := slice -}}
 {{- if $.IsHome -}}
     {{- $pages = .Site.RegularPages -}}
-    {{- if ne hugo.Environment "demo" }}
     {{- $pages = where $pages "Section" "!=" "v" -}}
+    {{- if ne hugo.Environment "demo" }}
+    {{- $pages = where $pages "Section" "!=" "demo" -}}
     {{- end }}
     {{- $pages = where $pages "Type" "!=" "search" -}}
 {{- else -}}
@@ -59,10 +60,10 @@
                 </a>
 
                 {{- with .Description }}
-                    <span>{{- . }}</span>
+                    <span class="post-meta">{{- . }}</span>
                 {{- end }}
 
-                {{- if .Params.expanded }}
+                {{- if .Params.contentInList }}
                     <div class="post-content">
                         {{- .Content }}
                     </div>

@@ -1,4 +1,7 @@
 {{- $tags := . }}
+{{- if ne hugo.Environment "demo" }}
+{{- $tags = where $tags "Title" "!=" "DemoTag" -}}
+{{- end }}
 {{- range $tag_index, $tag := $tags }}
     {{ if ne $tag_index 0 }},{{ end }}
     <a class="post-tag" href="{{- $tag.RelPermalink -}}">
