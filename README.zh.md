@@ -1,6 +1,6 @@
 # hugo-pure
 
-English(https://github.com/undus5/hugo-pure/)|中文
+[English](https://github.com/undus5/hugo-pure/)|中文
 
 一款简洁的 [Hugo](https://gohugo.io) 主题
 
