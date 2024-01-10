@@ -3,10 +3,10 @@
 {{- if $.IsHome -}}
     {{- $pages = .Site.RegularPages -}}
     {{- $pages = where $pages "Section" "!=" "v" -}}
+    {{- $pages = where $pages "Type" "!=" "search" -}}
     {{- if ne hugo.Environment "demo" }}
     {{- $pages = where $pages "Section" "!=" "demo" -}}
     {{- end }}
-    {{- $pages = where $pages "Type" "!=" "search" -}}
 {{- else -}}
     {{- $pages = $pctx.Pages -}}
 {{- end -}}
@@ -79,8 +79,11 @@
                         <span>{{- $date.Format "2006-01-02" -}}</span>
                     {{- end }}
                     {{- if .Params.tags }}
-                        {{ if .Date }},{{ end }}
                         {{- $tags := .GetTerms "tags" }}
+                        {{- if ne hugo.Environment "demo" }}
+                        {{- $tags = where $tags "Title" "!=" "DemoTag" -}}
+                        {{- end }}
+                        {{ if $tags }},{{ end }}
                         {{- partial "tags" $tags }}
                     {{- end }}
                 </div>
