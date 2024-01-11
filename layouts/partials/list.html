@@ -73,9 +73,11 @@
                 <div class="post-meta">
                     {{- if .Date }}
                         {{- $date :=  .Date }}
+                        {{/*}}
                         {{- if .Lastmod }}
                         {{- $date = .Lastmod }}
                         {{- end }}
+                        {{*/}}
                         <span>{{- $date.Format "2006-01-02" -}}</span>
                     {{- end }}
                     {{- if .Params.tags }}
