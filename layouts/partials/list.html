@@ -85,7 +85,7 @@
                         {{- if ne hugo.Environment "demo" }}
                         {{- $tags = where $tags "Title" "!=" "DemoTag" -}}
                         {{- end }}
-                        {{ if $tags }},{{ end }}
+                        {{ if and .Date $tags }},{{ end }}
                         {{- partial "tags" $tags }}
                     {{- end }}
                 </div>
