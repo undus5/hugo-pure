@@ -1,56 +1,54 @@
 {{- $page := . }}
 
 <div aria-label="Pagination" class="pagination" role="group">
-  {{- partial "partials/inline/pagination" $page }}
+    {{- partial "partials/inline/pagination" $page }}
 </div>
 
 {{- define "partials/inline/pagination" }}
-  {{- with .Paginator }}
+{{- with .Paginator }}
+
     {{- $currentPageNumber := .PageNumber }}
 
-    {{- $slots := 3 }}
+    {{- $slots := 5 }}
     {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
     {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
     {{- if lt (add (sub $end $start) 1) $slots }}
-      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+        {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
     {{- end }}
     {{- if lt $end 1 }}
         {{- $end = 1 }}
     {{- end }}
 
     {{- if gt $start 1 }}
-      <a
-        href="{{ .First.URL }}"
-        aria-label="Last"
-        class="pure-button pure-button"
-        role="button">1</a>
-      ...
+        <a href="{{ .First.URL }}"
+            aria-label="Last"
+            class="pure-button pure-button"
+            role="button">1</a>
+        {{ if gt (sub $start 1) 1 }}...{{- end }}
     {{- end }}
+
     {{- range $k := seq $start $end }}
-      {{- if eq $.Paginator.PageNumber $k }}
-        <a
-          href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
-          aria-label="Page {{ $k }}"
-          aria-current="page"
-          class="pure-button pure-button-active"
-          role="button">{{ $k }}</a>
-      {{- else }}
-        <a
-          href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
-          aria-label="Page {{ $k }}"
-          class="pure-button"
-          role="button">{{ $k }}</a>
-      {{- end }}
+        {{- if eq $.Paginator.PageNumber $k }}
+            <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
+                aria-label="Page {{ $k }}"
+                aria-current="page"
+                class="pure-button pure-button-active"
+                role="button">{{ $k }}</a>
+        {{- else }}
+            <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}"
+                aria-label="Page {{ $k }}"
+                class="pure-button"
+                role="button">{{ $k }}</a>
+        {{- end }}
     {{- end }}
 
     {{- if lt $end .TotalPages }}
-      ...
-      <a
-        href="{{ .Last.URL }}"
-        aria-label="Last"
-        class="pure-button pure-button"
-        role="button">{{ .TotalPages }}</a>
+        {{ if gt (sub .TotalPages $end) 1 }}...{{- end }}
+        <a href="{{ .Last.URL }}"
+            aria-label="Last"
+            class="pure-button pure-button"
+            role="button">{{ .TotalPages }}</a>
     {{- end }}
 
-  {{- end }}
+{{- end }}
 {{- end -}}
