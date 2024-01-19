@@ -1,4 +1,5 @@
 # i18n en
 
-READ_MORE    = "Read More"
-SEARCH_ALERT = "If you see this message, it means you can not access Google, search function is unusable."
+READ_MORE     = "Read More"
+SEARCH_ALERT  = "If you see this message, it means you can not access Google, search function is unusable."
+LAST_MODIFIED = "Last Modified"

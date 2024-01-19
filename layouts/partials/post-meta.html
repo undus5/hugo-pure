@@ -1,13 +1,7 @@
 {{- if (or .Date .Params.tags) }}
 <div class="post-meta">
-    {{- if .Date }}
-        {{- $date := .Date }}
-        {{/*}}
-        {{- if .Lastmod }}
-        {{- $date = .Lastmod }}
-        {{- end }}
-        {{*/}}
-        <span>{{- $date.Format "2006-01-02 15:04:05 GMT+8" -}}</span>
+    {{- with .Date }}
+        <span>{{- .Format "2006.01.02" -}}</span>
     {{- end }}
 
     {{- if .Params.sources }}

@@ -1,4 +1,5 @@
 {{- if .IsPage }}
+
 <div class="post-title">
     <h1>
         {{- partial "draft-mark" . }}
@@ -18,4 +19,14 @@
 {{- end }}
 {{- .Content }}
 </div>
+
+{{- with .Lastmod }}
+<p>
+<span class="post-meta">
+    {{- or (i18n "LAST_MODIFIED") "Last Modified" | safeHTML }}:
+    {{.Format "2006.01.02 15:04 GMT+8"}}
+</span>
+</p>
+{{- end }}
+
 {{- end }}
