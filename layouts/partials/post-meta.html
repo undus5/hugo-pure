@@ -1,4 +1,4 @@
-{{- if (or .Date .Params.tags) }}
+{{- if or .Date .Params.sources .Params.tags }}
 <div class="post-meta">
     {{- with .Date }}
         <span>{{- .Format "2006.01.02" -}}</span>
