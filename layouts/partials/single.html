@@ -1,47 +1,21 @@
-{{- $page := . }}
-
-{{- if $page.IsPage }}
-    <h1 class="post-title">
-        {{- partial "draft-mark" $page }}
-        {{ $page.Title -}}
+{{- if .IsPage }}
+<div class="post-title">
+    <h1>
+        {{- partial "draft-mark" . }}
+        {{ .Title -}}
     </h1>
+</div>
 
-    {{- with $page.Description }}
-    <p class="post-meta">
-    {{- . }}
-    </p>
-    {{- end }}
+{{- partial "post-meta" . }}
 
-    {{- if (or $page.Date $page.Params.tags) }}
-    <p class="post-meta">
-        {{- if $page.Date }}
-            {{- if ne $page.Date $page.Lastmod }}
-                <span>{{- or (i18n "UPDATED") "Updated" | safeHTML }} : </span>
-                <span>{{ $page.Lastmod.Format "2006-01-02" }}</span>
-                <span>,</span>
-                <span>{{- or (i18n "CREATED") "Created" | safeHTML }} : </span>
-            {{- end }}
-            <span>{{ $page.Date.Format "2006-01-02" }}</span>
-        {{- end }}
-        {{- if $page.Params.tags }}
-            {{ if $page.Date }},{{ end }}
-            {{- $tags := $page.GetTerms "tags" }}
-            {{- partial "tags" $tags }}
-        {{- end }}
-    </p>
-    {{- end }}
-{{- end }}
-
-{{- if $page.Content }}
 <div class="post-content">
-    {{- if $page.Params.enableTOC }}
+{{- if .Params.enableTOC }}
     <div class="toc-anchor">
         <div class="toc-wrapper">
-        {{- $page.TableOfContents }}
+        {{- .TableOfContents }}
         </div>
     </div>
-    {{- end }}
-
-    {{- $page.Content }}
+{{- end }}
+{{- .Content }}
 </div>
 {{- end }}

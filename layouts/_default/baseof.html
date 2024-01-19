@@ -23,11 +23,13 @@
 {{- partial "menu" . }}
 
 <div id="main">
-    {{- if not .Site.Params.disableCornerIndicator }}
+    {{- if .Site.Params.enableCornerIndicator }}
     <div class="corner-indicator corner-top"></div>
     {{- end }}
+
     {{ block "main" . }}{{ end }}
-    {{- if not .Site.Params.disableCornerIndicator }}
+
+    {{- if .Site.Params.enableCornerIndicator }}
     <div class="corner-indicator corner-bottom"></div>
     {{- end }}
 </div>

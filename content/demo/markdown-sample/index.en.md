@@ -1,13 +1,12 @@
 +++
-title          = "Markdown Sample"
-description    = "Markdown Syntax"
-lastmod        = 2023-02-22T11:49:46+08:00
-date           = 2023-02-20T11:49:46+08:00
-enableTOC      = true
-tags           = ["DemoTag"]
-#draft         = true
-#contentInList = true
-#source        = "https://www.youtube.com/watch?v = dQw4w9WgXcQ"
+title       = "Markdown Sample"
+description = "Markdown Syntax"
+lastmod     = 2023-02-22T11:49:46+08:00
+date        = 2023-02-20T11:49:46+08:00
+tags        = ["DemoTag"]
+draft       = true
+enableTOC   = true
+showSummary = true
 +++
 
 # h1 Heading
@@ -26,6 +25,7 @@ ___
 
 ***
 
+<!--more-->
 
 ## Emphasis
 

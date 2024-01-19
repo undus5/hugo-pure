@@ -1,16 +1,10 @@
-# demo menus en
+# default menus
 
 [[main]]
-identifier = "home_demo"
-pageRef = "/"
-name = "Home"
-weight = 1
-
-[[main]]
-identifier = "tags_demo"
-pageRef    = "/tags/"
-name       = "Tags"
-weight     = 9
+identifier = "home"
+pageRef    = "/"
+name       = "Home"
+weight     = 1
 
 [[footer]]
 identifier = "copyright"
@@ -20,13 +14,12 @@ weight     = 1
 
 [[footer]]
 identifier = "rss"
-pageRef    = "/"
+pageRef    = "/index.xml"
 name       = "RSS"
 weight     = 3
 [[footer.params]]
 targetBlank = true
 iconClass   = "fa-solid fa-rss"
-format      = "rss"
 
 [[footer]]
 identifier = "search"
@@ -36,12 +29,3 @@ weight     = 5
 [[footer.params]]
 targetBlank = false
 iconClass   = "fa-solid fa-magnifying-glass"
-
-[[footer]]
-identifier = "github"
-url        = "https://github.com/undus5/hugo-pure"
-name       = "Github"
-weight     = 9
-[[footer.params]]
-targetBlank = true
-iconClass   = "fa-brands fa-github"

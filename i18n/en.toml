@@ -1,5 +1,4 @@
 # i18n en
 
-CREATED = "Created"
-UPDATED = "Updated"
+READ_MORE    = "Read More"
 SEARCH_ALERT = "If you see this message, it means you can not access Google, search function is unusable."

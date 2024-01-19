@@ -1,7 +1,6 @@
 # i18n zh
 
-CREATED = "创建"
-UPDATED = "更新"
+READ_MORE    = "阅读全文"
 SEARCH_ALERT = "如果你能看到这条信息, 说明你无法访问 Google 服务, 无法使用搜索功能."
 
 DEMOTAG = "演示标签"

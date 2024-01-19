@@ -1,5 +1,5 @@
 +++
-#paginate = 2
-#column   = "single"
-#hideList = true
+paginate       = 1
+#doubleColumns = true
+#hideList      = true
 +++

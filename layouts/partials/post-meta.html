@@ -1,0 +1,37 @@
+{{- if (or .Date .Params.tags) }}
+<div class="post-meta">
+    {{- if .Date }}
+        {{- $date := .Date }}
+        {{/*}}
+        {{- if .Lastmod }}
+        {{- $date = .Lastmod }}
+        {{- end }}
+        {{*/}}
+        <span>{{- $date.Format "2006-01-02 15:04:05 GMT+8" -}}</span>
+    {{- end }}
+
+    {{- if .Params.sources }}
+    {{ if .Date }}&nbsp;{{ end }}
+    {{ range $i, $src := .Params.sources }}
+        {{ if ne $i 0 }}&nbsp;{{ end }}
+        {{ $tgt:= "_blank" }}
+        {{ if $src.target }}
+        {{ $tgt = $src.target }}
+        {{ end }}
+        <a class="post-tag" href="{{- $src.url -}}" target="{{- $tgt -}}" rel="noreferrer">
+        {{- $src.title }}
+        <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    {{- end }}
+    {{- end }}
+
+    {{- if .Params.tags }}
+        {{ if or .Date .Params.sources }}&nbsp;{{ end }}
+        {{ $tags := .GetTerms "tags" }}
+        {{- partial "tags" $tags }}
+    {{- end }}
+</div>
+{{- end }}
+
+{{- with .Description }}
+<div class="post-meta">{{- . }}</div>
+{{- end }}

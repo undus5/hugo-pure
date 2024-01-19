@@ -2,7 +2,7 @@
 
 [English](https://github.com/undus5/hugo-pure/)|中文
 
-一款简洁的 [Hugo](https://gohugo.io) 主题
+一款简洁的 [Hugo](https://gohugo.io) 主题, [在线演示](https://undus5.github.io/hugo-pure/)
 
 ## 特性
 
@@ -10,9 +10,42 @@
 
 - 暗色主题 (自动切换)
 
+- 多语言支持
+
 - 无 Javascript
 
-- 支持多语言
+- 自定义选项 (front matter)
+
+## 自定义选项
+
+### 列表页 (_index.md)
+
+```
++++
+paginate      = 1     # 每页文章数
+doubleColumns = true  # 列表风格 (单列/双列), 也可在 config.toml 全局配置
+hideList      = true  # 只显示 _index.md 内容
++++
+```
+
+### 单页
+
+```
++++
+showSummary = true  # 在列表中显示摘要
+enableTOC   = true  # 开启章节索引
+
+# 添加来源外链, 与标签同列显示
+
+[[sources]]
+title = "Source1"
+url   = "https://gohugo.io/documentation/"
+
+[[sources]]
+title = "Source2"
+url   = "https://gohugo.io/about/"
++++
+```
 
 ## 安装
 

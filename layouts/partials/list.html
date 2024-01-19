@@ -1,5 +1,6 @@
 {{- $pctx := . -}}
 {{- $pages := slice -}}
+
 {{- if $.IsHome -}}
     {{- $pages = .Site.RegularPages -}}
     {{- $pages = where $pages "Section" "!=" "v" -}}
@@ -10,11 +11,13 @@
 {{- else -}}
     {{- $pages = $pctx.Pages -}}
 {{- end -}}
+
 {{- /* $pages = $pages.ByPublishDate.Reverse */ -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
     {{- $pages = $pages | first $limit -}}
 {{- end -}}
+
 {{- $pageSize := $pctx.Params.paginate }}
 {{- if $pageSize }}
     {{- $pages = (.Paginate $pages $pageSize).Pages }}
@@ -22,73 +25,47 @@
     {{- $pages = (.Paginate $pages).Pages }}
 {{- end }}
 
-{{- $types := slice "single" "double" }}
-{{- $ctype := $pctx.Params.column }}
-{{- if or (not $ctype) (not (in $types $ctype)) }}
-{{- $ctype = "double" }}
+{{- $columnClass := "" }}
+{{- if or $pctx.Params.doubleColumns .Site.Params.doubleColumns }}
+{{- $columnClass = "double-columns" }}
 {{- end }}
-<div class="pure-g post-list column-{{- $ctype -}}">
+<div class="pure-g post-list {{ $columnClass -}}">
     {{- range $pages }}
         <article class="pure-u-1 post-card">
             {{- $page := . }}
             {{- $poster := .Resources.Get "poster.webp" }}
 
             {{- if $poster }}
-                {{- $link := .RelPermalink }}
-                {{- $target := "_self" }}
-                {{- $source := .Params.source }}
-                {{- if $source }}
-                    {{- $link = $source }}
-                    {{- $target = "_blank" }}
-                {{- end }}
-                <a target="{{- $target }}" href="{{- $link -}}" {{ if $source }}rel="noreferrer"{{ end }}>
+                <a href="{{- .RelPermalink -}}">
                     <figure class="poster poster-mask">
                         <img src="{{- $poster.RelPermalink -}}">
-                        {{- if $source }}
-                            <i class="fa-solid fa-play"></i>
+                        {{- if false }}
+                            <i class="source-icon fa-solid fa-arrow-up-right-from-square"></i>
                         {{- end }}
                     </figure>
                 </a>
             {{- end }}
 
             <div class="post-card__content">
-                <a class="post-card__link" href="{{- .RelPermalink -}}">
-                    <h2 class="post-card__title">
-                        {{- partial "draft-mark" . }}
-                        {{ .Title -}}
-                    </h2>
-                </a>
-
-                {{- with .Description }}
-                    <span class="post-meta">{{- . }}</span>
-                {{- end }}
-
-                {{- if .Params.contentInList }}
-                    <div class="post-content">
-                        {{- .Content }}
-                    </div>
-                {{- end }}
-
-                {{- if (or .Date .Params.tags) }}
-                <div class="post-meta">
-                    {{- if .Date }}
-                        {{- $date :=  .Date }}
-                        {{/*}}
-                        {{- if .Lastmod }}
-                        {{- $date = .Lastmod }}
-                        {{- end }}
-                        {{*/}}
-                        <span>{{- $date.Format "2006-01-02" -}}</span>
-                    {{- end }}
-                    {{- if .Params.tags }}
-                        {{- $tags := .GetTerms "tags" }}
-                        {{- if ne hugo.Environment "demo" }}
-                        {{- $tags = where $tags "Title" "!=" "DemoTag" -}}
-                        {{- end }}
-                        {{ if and .Date $tags }},{{ end }}
-                        {{- partial "tags" $tags }}
-                    {{- end }}
+                <div class="post-title">
+                    <a href="{{- .RelPermalink -}}">
+                        <h1>
+                            {{- partial "draft-mark" . }}
+                            {{ .Title -}}
+                        </h1>
+                    </a>
                 </div>
+
+                {{- partial "post-meta" . }}
+
+                {{- if .Params.showSummary }}
+                    <div class="post-content">{{- .Summary }}</div>
+                    {{- if .Truncated }}
+                        <p class="post-meta">...</p>
+                        <a class="post-tag" href="{{- .RelPermalink -}}">
+                            {{- or (i18n "READ_MORE") "Read More" | safeHTML }}
+                        </a>
+                    {{- end }}
                 {{- end }}
             </div>
         </article>

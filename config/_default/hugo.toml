@@ -1,23 +1,10 @@
 # default configuration
 
-baseURL             = "/"
-title               = "Hugo Theme: hugo-pure"
-hasCJKLanguage      = true
-pluralizeListTitles = false
-paginate            = 4
+baseURL = "/"
+title   = "Hugo Theme: hugo-pure"
 
-languageCode           = "en-us"
-#defaultContentLanguage = 'en'
-
-#[languages]
-#[languages.en]
-#languageCode = "en-us"
-#languageName = "En"
-#weight       = 1
-#title        = "Hugo Theme: hugo-pure"
-
-#[params]
-#disableCornerIndicator = true
+languageCode   = "en-us"
+hasCJKLanguage = true
 
 [markup]
 _merge    = "deep"
@@ -31,44 +18,14 @@ endLevel  = 2
 [permalinks.page]
 v = "/:slugorfilename/"
 
-[menus]
-[[menus.main]]
-identifier = "home"
-pageRef    = "/"
-name       = "Home"
-weight     = 1
-
-[[menus.footer]]
-identifier = "copyright"
-pageRef    = "/"
-name       = "©2023"
-weight     = 1
-
-[[menus.footer]]
-identifier = "rss"
-pageRef    = "/index.xml"
-name       = "RSS"
-weight     = 3
-[[menus.footer.params]]
-targetBlank = true
-iconClass   = "fa-solid fa-rss"
-
-[[menus.footer]]
-identifier = "search"
-pageRef    = "/search"
-name       = "Search"
-weight     = 5
-[[menus.footer.params]]
-targetBlank = false
-iconClass   = "fa-solid fa-magnifying-glass"
+#[params]
+#doubleColumns = true
+#enableCornerIndicator = true
 
 #[outputFormats]
-#_merge    = "deep"
-#[outputFormats.jsentries]
-#_merge    = "deep"
-#baseName  = "entries"
-#mediaType = "text/javascript"
+#[outputFormats.myjson]
+#baseName  = "myfilename"
+#mediaType = "application/json"
 
 #[outputs]
-#_merge    = "deep"
-#home      = ["html", "rss", "jsentries"]
+#home = ["html", "rss", "myjson"]
