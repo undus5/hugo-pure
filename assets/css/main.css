@@ -6,10 +6,10 @@
     --max-width: 800px;
     --border-solid: 1px solid;
 
-    --body-background-light: #eeeeee;
-    --pre-background-light: #dddddd;
-    --body-color-light: #444444;
-    --link-color-light: #585858;
+    --body-background-light: #efefef;
+    --pre-background-light: #dedede;
+    --body-color-light: #434343;
+    --link-color-light: #808080;
     --border-color-light: #cdcdcd;
 
     --body-background-dark: #1c1c1c;
@@ -53,6 +53,8 @@ pre code {
 
 #footer { padding: 1em 1em 3em; }
 #footer a { text-decoration: none; }
+
+.main-menu .pure-menu-link { font-weight: bold; }
 
 .corner-indicator {
     display: flex;
