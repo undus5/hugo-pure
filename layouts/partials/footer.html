@@ -1,7 +1,7 @@
 {{- $pctx := . }}
 <div id="footer">
-{{- $menus := .Site.Menus.footer }}
 
+{{- $menus := .Site.Menus.footer }}
 {{- range $menus }}
 {{- $url := .URL }}
 {{- if .Page }}
@@ -9,26 +9,25 @@
     {{- if and .Params.format }}
         {{- $fmt := (.Page.AlternativeOutputFormats).Get .Params.format }}
         {{- if not $fmt }}
-        {{- continue }}
+            {{- continue }}
         {{- else }}
-        {{- $url = $fmt.RelPermalink }}
+            {{- $url = $fmt.RelPermalink }}
         {{- end }}
     {{- end }}
 {{- end }}
-<a
-    href="{{- $url -}}"
+<a href="{{- $url -}}"
     {{ with .Params.targetBlank }}target="_blank"{{ end -}}
 >
     {{- with .Params.iconClass }}
         <i class="{{- . -}}"></i>
     {{- else }}
         {{- .Name | safeHTML -}}
-    {{- end }}
+    {{- end -}}
 </a>
 {{- end }}
 
 {{- if and .Site.IsMultiLingual .IsTranslated }}
-{{- range $i, $p := .AllTranslations }}
+{{ range $i, $p := .AllTranslations }}
     {{- if gt $i 0 }}|{{ end }}
     {{- if eq $p.Lang $pctx.Lang -}}
         {{- $p.Language.LanguageName -}}
@@ -37,4 +36,5 @@
     {{- end }}
 {{- end }}
 {{- end }}
+
 </div>

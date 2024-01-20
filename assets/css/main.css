@@ -32,9 +32,6 @@ pre code {
     padding: 1em;
 }
 .pure-button { border-radius: 0; }
-.pure-menu-selected .pure-menu-link {
-    text-decoration: underline;
-}
 
 #main,
 #footer
@@ -80,9 +77,8 @@ pre code {
     margin: 0;
     margin-bottom: 0.8em;
 }
-div.post-meta {
-    margin-top: 1em;
-}
+div.post-meta { margin-top: 1em; }
+a.post-tag:hover { text-decoration: none; }
 
 .poster {
     position: relative;
@@ -103,10 +99,15 @@ div.post-meta {
 
 .pagination-wrapper { padding-top: 2em; }
 
+.post-title a { text-decoration: none; }
+.post-title a:hover { text-decoration: underline; }
 .post-title h1 { margin-top: 0; }
 .post-content {
     line-height: 1.6em;
     margin-top: 1em;
+}
+.post-content a:hover {
+    text-decoration: none;
 }
 
 .toc-anchor {
@@ -124,6 +125,12 @@ div.post-meta {
     margin: 0;
     padding: 0;
     width: 8em;
+}
+#TableOfContents a {
+    text-decoration: none;
+}
+#TableOfContents a:hover {
+    text-decoration: underline;
 }
 
 @media (min-width: 70em) {
@@ -172,6 +179,8 @@ pre { background-color: var(--pre-background-light); }
 {
     color: var(--link-color-light);
 }
+#footer a:hover { color: var(--body-color-light); }
+a.post-tag:hover { color: var(--body-color-light); }
 
 .poster img,
 .post-content img
@@ -231,6 +240,8 @@ pre { background-color: var(--pre-background-light); }
     {
         color: var(--link-color-dark);
     }
+    #footer a:hover { color: var(--body-color-dark); }
+    a.post-tag:hover { color: var(--body-color-dark); }
 
     .poster img,
     .post-content img
