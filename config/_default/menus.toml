@@ -21,11 +21,3 @@ weight     = 3
 targetBlank = true
 iconClass   = "fa-solid fa-rss"
 
-[[footer]]
-identifier = "search"
-pageRef    = "/search"
-name       = "Search"
-weight     = 5
-[[footer.params]]
-targetBlank = false
-iconClass   = "fa-solid fa-magnifying-glass"

@@ -1,12 +1,11 @@
 +++
-title        = "Markdown Sample"
-description  = "Markdown Syntax"
-lastmod      = 2023-02-22T11:49:46+08:00
-date         = 2023-02-20T11:49:46+08:00
-tags         = ["DemoTag"]
-draft        = true
-enableTOC    = true
-showSummary  = true
+title       = "Markdown Sample"
+lastmod     = 2023-02-22T11:49:46+08:00
+date        = 2023-02-20T11:49:46+08:00
+tags        = ["DemoTag"]
+draft       = true
+enableTOC   = true
+showSummary = true
 +++
 
 # h1 Heading
@@ -134,10 +133,11 @@ Autoconverted link https://github.com
 
 ![Minion](https://octodex.github.com/images/minion.png "Minion")
 
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
+Like links, Images also have a footnote style syntax.
 
 With a reference later in the document defining the URL location:
 
+![Alt text][id]
+
 [id]: https://octodex.github.com/images/minion.png "Minion"
+

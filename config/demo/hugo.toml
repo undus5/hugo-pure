@@ -15,6 +15,3 @@ languageCode = "zh-cn"
 languageName = "中"
 weight       = 3
 title        = "Hugo 主题: hugo-pure"
-
-[params]
-description = "Hugo theme: hugo-pure demo site"

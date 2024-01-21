@@ -62,9 +62,6 @@
                     <div class="post-content">{{- .Summary }}</div>
                     {{- if .Truncated }}
                         <p class="post-meta">...</p>
-                        <a class="post-tag" href="{{- .RelPermalink -}}">
-                            {{- or (i18n "READ_MORE") "Read More" | safeHTML }}
-                        </a>
                     {{- end }}
                 {{- end }}
             </div>

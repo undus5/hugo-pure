@@ -10,7 +10,7 @@
         {{ if ne $i 0 }}&nbsp;{{ end }}
         {{ $tgt:= "_blank" }}
         {{ if $src.target }}
-        {{ $tgt = $src.target }}
+            {{ $tgt = $src.target }}
         {{ end }}
         <a class="post-tag" href="{{- $src.url -}}" target="{{- $tgt -}}" rel="noreferrer">
         {{- $src.title }}
@@ -26,6 +26,3 @@
 </div>
 {{- end }}
 
-{{- with .Description }}
-<div class="post-meta">{{- . }}</div>
-{{- end }}
