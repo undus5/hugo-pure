@@ -1,0 +1,89 @@
+{{- $p := .page }}
+{{- $t := .type }}
+
+{{- if eq $t "list" }}
+{{- $poster := $p.Resources.Get "poster.webp" }}
+{{- if $poster }}
+<a href="{{- $p.RelPermalink -}}">
+    <figure class="poster poster-mask">
+        <img src="{{- $poster.RelPermalink -}}">
+    </figure>
+</a>
+{{- end }}
+{{- end }}
+
+{{- with $p.Title }}
+<div class="post-title">
+    {{- if eq $t "list" }}
+        <a href="{{- $p.RelPermalink -}}">
+        <h1>
+            {{- if $p.Draft }}*{{ end }}
+            {{ $p.Title -}}
+        </h1>
+        </a>
+    {{- else }}
+        <h1>
+            {{- if $p.Draft }}*{{ end }}
+            {{ $p.Title -}}
+        </h1>
+    {{- end }}
+</div>
+{{- end }}
+
+{{- if or $p.Date $p.Params.sources $p.Params.tags }}
+<div class="post-meta">
+    {{- with $p.Date }}
+        <span>{{- .Format "2006.01.02" -}}</span>
+    {{- end }}
+
+    {{- if $p.Params.sources }}
+    {{ if $p.Date }}&nbsp;{{ end }}
+    {{ range $i, $src := $p.Params.sources }}
+        {{ if ne $i 0 }}&nbsp;{{ end }}
+        {{ $tgt:= "_blank" }}
+        {{ if $src.target }}
+            {{ $tgt = $src.target }}
+        {{ end }}
+        <a class="post-tag" href="{{- $src.url -}}" target="{{- $tgt -}}" rel="noreferrer">
+        {{- $src.title }}
+        <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    {{- end }}
+    {{- end }}
+
+    {{- if $p.Params.tags }}
+        {{ if or $p.Date $p.Params.sources }}&nbsp;{{ end }}
+        {{ $tags := $p.GetTerms "tags" }}
+        {{- partial "tags" $tags }}
+    {{- end }}
+</div>
+{{- end }}
+
+{{- if and (eq $t "list") $p.Params.showSummary }}
+<div class="post-content">{{- $p.Summary }}</div>
+{{- if $p.Truncated }}
+    <p class="post-meta">...</p>
+{{- end }}
+{{- end }}
+
+{{- if and (ne $t "list") $p.Content }}
+<div class="post-content">
+{{- if $p.Params.enableTOC }}
+    <div class="toc-anchor">
+        <div class="toc-wrapper">
+        {{- $p.TableOfContents }}
+        </div>
+    </div>
+{{- end }}
+{{- $p.Content }}
+</div>
+{{- end }}
+
+{{- if and (ne $t "list") $p.Lastmod (ne $p.Lastmod $p.Date) }}
+<p>
+<span class="post-meta">
+    {{- or (i18n "LAST_MODIFIED") "Last Modified" | safeHTML }}:
+    {{ $p.Lastmod.Format "2006-01-02 15:04 UTC-07:00" }}
+</span>
+</p>
+{{- end }}
+

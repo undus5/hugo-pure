@@ -22,9 +22,8 @@
 
 ```
 +++
-paginate      = 1     # 每页文章数
-doubleColumns = true  # 列表风格 (单列/双列), 也可在 config.toml 全局配置
-hideList      = true  # 只显示 _index.md 内容
+paginate      = 1      # 每页文章数
+doubleColumns = true   # 列表风格 (单列/双列), 也可在 config.toml 全局配置
 +++
 ```
 
@@ -32,8 +31,8 @@ hideList      = true  # 只显示 _index.md 内容
 
 ```
 +++
-showSummary = true  # 在列表中显示摘要
-enableTOC   = true  # 开启章节索引
+showSummary = true   # 在列表中显示摘要
+enableTOC   = true   # 开启章节索引
 
 # 添加来源外链, 与标签同列显示
 

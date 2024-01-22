@@ -27,18 +27,15 @@
     {{- end }}
 {{- end }}
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta property="og:site_name" content="{{- .Site.Title -}}">
 <meta property="og:url" content="{{- .Permalink -}}">
 <meta property="og:title" content="{{- $previewTitle -}}">
 <meta property="og:description" content="{{- $description -}}">
 
 <meta name="description" content="{{- $description -}}">
-
-<!--
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
--->
 
 <title>{{- $pageTitle -}}</title>
 <link rel="canonical" href="{{- .Permalink -}}">

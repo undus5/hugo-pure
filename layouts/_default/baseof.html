@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {{- partial "meta" . }}
+    {{- partial "meta.html" . }}
 
     {{- $css := slice }}
-    {{- $css = $css | append (resources.Get "purecss/pure-min.css") }}
-    {{- $css = $css | append (resources.Get "purecss/grids-responsive-min.css") }}
-    {{- $css = $css | append (resources.Get "css/menu.css") }}
-    {{- $css = $css | append (resources.Get "css/main.css") }}
-    {{- $css = $css | append (resources.Get "css/syntax-light.css") }}
-    {{- $css = $css | append (resources.Get "css/syntax-dark.css") }}
+    {{- $css = $css | append (resources.Get "pure-min.css") }}
+    {{- $css = $css | append (resources.Get "grids-responsive-min.css") }}
+    {{- $css = $css | append (resources.Get "main.css") }}
+    {{- $css = $css | append (resources.Get "syntax-light.css") }}
+    {{- $css = $css | append (resources.Get "syntax-dark.css") }}
     {{- $css = $css | resources.Concat "bundle.css" }}
     {{- $css = $css | resources.Minify }}
     <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
@@ -20,24 +16,24 @@
 
 <body>
 
-{{- partial "menu" . }}
+{{- partial "header.html" . }}
 
 <div id="main">
-    {{- if .Site.Params.enableCornerIndicator }}
+    {{- if .Site.Params.showCorner }}
     <div class="corner-indicator corner-top"></div>
     {{- end }}
 
     {{ block "main" . }}{{ end }}
 
-    {{- if .Site.Params.enableCornerIndicator }}
+    {{- if .Site.Params.showCorner }}
     <div class="corner-indicator corner-bottom"></div>
     {{- end }}
 </div>
 
-{{- partial "footer" . }}
+{{- partial "footer.html" . }}
     
 {{- $js := slice }}
-{{- $js = $js | append (resources.Get "js/main.js") }}
+{{- $js = $js | append (resources.Get "overwrite.js") }}
 {{- $js = $js | resources.Concat "bundle.js" }}
 {{- $js = $js | resources.Minify }}
 <script src="{{- $js.RelPermalink -}}"></script>

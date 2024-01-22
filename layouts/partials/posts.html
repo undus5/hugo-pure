@@ -1,0 +1,44 @@
+{{- $pctx := . -}}
+{{- $pages := slice -}}
+
+{{- if $.IsHome -}}
+    {{- $pages = .Site.RegularPages -}}
+    {{- $pages = where $pages "Section" "!=" "v" -}}
+    {{- $pages = where $pages "Type" "!=" "search" -}}
+    {{- if ne hugo.Environment "demo" }}
+    {{- $pages = where $pages "Section" "!=" "demo" -}}
+    {{- end }}
+{{- else -}}
+    {{- $pages = $pctx.Pages -}}
+{{- end -}}
+
+{{- /* $pages = $pages.ByPublishDate.Reverse */ -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+{{- end -}}
+
+{{- $pageSize := $pctx.Params.paginate }}
+{{- if $pageSize }}
+    {{- $pages = (.Paginate $pages $pageSize).Pages }}
+{{- else }}
+    {{- $pages = (.Paginate $pages).Pages }}
+{{- end }}
+
+{{- $columnClass := "" }}
+{{- if or $pctx.Params.doubleColumns .Site.Params.doubleColumns }}
+{{- $columnClass = "double-columns" }}
+{{- end }}
+<div class="pure-g post-list {{ $columnClass -}}">
+    {{- range $pages }}
+        <article class="pure-u-1 post-card">
+            {{- partial "page.html" (dict "page" . "type" "list") }}
+        </article>
+    {{- end }}
+</div>
+
+{{- if gt .Paginator.TotalPages 1 }}
+<div class="pagination-wrapper">
+    {{- partial "pagination.html" . }}
+</div>
+{{- end }}

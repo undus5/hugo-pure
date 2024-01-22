@@ -22,9 +22,8 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://undus5.g
 
 ```
 +++
-paginate      = 1     # number of posts per page
-doubleColumns = true  # list style, also available in config.toml
-hideList      = true  # display _index.md content only
+paginate      = 1      # number of posts per page
+doubleColumns = true   # list style, also available in config.toml
 +++
 ```
 
@@ -32,8 +31,8 @@ hideList      = true  # display _index.md content only
 
 ```
 +++
-showSummary = true  # show summary on list
-enableTOC   = true  # enable Table of Contents
+showSummary = true   # show summary on list
+enableTOC   = true   # enable Table of Contents
 
 # add external source links beside tags
 

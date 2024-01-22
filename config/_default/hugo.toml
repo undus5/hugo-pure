@@ -12,6 +12,7 @@ _merge    = "deep"
 _merge    = "deep"
 noClasses = false
 [markup.tableOfContents]
+_merge    = "deep"
 endLevel  = 2
     
 [permalinks]
@@ -20,12 +21,11 @@ v = "/:slugorfilename/"
 
 #[params]
 #doubleColumns = true
-#enableCornerIndicator = true
+#showCorner = true
 
 #[outputFormats]
 #[outputFormats.myjson]
 #baseName  = "myfilename"
 #mediaType = "application/json"
-
 #[outputs]
 #home = ["html", "rss", "myjson"]

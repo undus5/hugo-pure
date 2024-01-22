@@ -1,5 +1,5 @@
 {{- $pctx := . }}
-<div id="menu">
+<div id="header">
 <div class="pure-menu pure-menu-horizontal">
 <ul class="pure-menu-list">
 
@@ -21,7 +21,7 @@
         {{- end }}
     {{- end }}
 {{- end }}
-<li class="main-menu pure-menu-item {{ if eq $pctx.RelPermalink $url }} pure-menu-selected {{ end -}}">
+<li class="pure-menu-item {{ if eq $pctx.RelPermalink $url }} pure-menu-selected {{ end -}}">
     <a
         class="pure-menu-link"
         href="{{- $url -}}"
