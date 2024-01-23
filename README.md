@@ -6,7 +6,7 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://undus5.g
 
 ## Features
 
-- Responsive design (Mobile device support)
+- Responsive design (mobile device support)
 
 - Dark mode support (auto switch)
 
@@ -31,8 +31,8 @@ doubleColumns = true   # list style, also available in config.toml
 
 ```
 +++
+showToc     = true   # enable table of contents
 showSummary = true   # show summary on list
-enableTOC   = true   # enable Table of Contents
 
 # add external source links beside tags
 
@@ -57,5 +57,5 @@ $ echo "theme = 'hugo-pure'" >> config.toml
 
 # Or you can run demo directly
 $ cd hugo-pure
-$ ./run_demo.sh
+$ ./rundemo.sh
 ```

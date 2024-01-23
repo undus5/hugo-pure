@@ -58,7 +58,7 @@
 </div>
 {{- end }}
 
-{{- if and (eq $t "list") $p.Params.showSummary }}
+{{- if and (eq $t "list") ($p.Param "showSummary") }}
 <div class="post-content">{{- $p.Summary }}</div>
 {{- if $p.Truncated }}
     <p class="post-meta">...</p>
@@ -67,7 +67,7 @@
 
 {{- if and (ne $t "list") $p.Content }}
 <div class="post-content">
-{{- if $p.Params.enableTOC }}
+{{- if $p.Param "showToc" }}
     <div class="toc-anchor">
         <div class="toc-wrapper">
         {{- $p.TableOfContents }}

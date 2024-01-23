@@ -31,8 +31,8 @@ doubleColumns = true   # 列表风格 (单列/双列), 也可在 config.toml 全
 
 ```
 +++
+showToc     = true   # 开启章节索引
 showSummary = true   # 在列表中显示摘要
-enableTOC   = true   # 开启章节索引
 
 # 添加来源外链, 与标签同列显示
 
@@ -57,5 +57,5 @@ $ echo "theme = 'hugo-pure'" >> config.toml
 
 # 或者你可以直接启动演示项目
 $ cd hugo-pure
-$ ./run_demo.sh
+$ ./rundemo.sh
 ```

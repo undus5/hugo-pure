@@ -5,15 +5,15 @@
 :root {
     --max-width: 800px;
 
-    --background-main-light: #efefef;
+    --background-light: #efefef;
     --background-pre-light: #cdcdcd;
-    --color-main-light: #434343;
-    --color-second-light: #808080;
+    --color-light: #434343;
+    --color-secondary-light: #808080;
 
-    --background-main-dark: #1c1c1c;
+    --background-dark: #1c1c1c;
     --background-pre-dark: #323232;
-    --color-main-dark: #d0d0d0;
-    --color-second-dark: #878787;
+    --color-dark: #d0d0d0;
+    --color-secondary-dark: #878787;
 }
 
 html { overflow-y: scroll; }
@@ -158,8 +158,8 @@ a.post-tag:hover { text-decoration: none; }
 /******************************************************************************/
 
 body {
-    background-color: var(--background-main-light);
-    color: var(--color-main-light);
+    background-color: var(--background-light);
+    color: var(--color-light);
 }
 pre { background-color: var(--background-pre-light); }
 
@@ -173,7 +173,7 @@ pre { background-color: var(--background-pre-light); }
 .post-title a,
 .post-content a
 {
-    color: var(--color-main-light);
+    color: var(--color-light);
 }
 
 .post-meta,
@@ -181,10 +181,10 @@ pre { background-color: var(--background-pre-light); }
 .pure-menu-link,
 #footer a
 {
-    color: var(--color-second-light);
+    color: var(--color-secondary-light);
 }
-#footer a:hover { color: var(--color-main-light); }
-a.post-tag:hover { color: var(--color-main-light); }
+#footer a:hover { color: var(--color-light); }
+a.post-tag:hover { color: var(--color-light); }
 
 .poster img,
 .post-content img
@@ -192,12 +192,12 @@ a.post-tag:hover { color: var(--color-main-light); }
     border-color: var(--background-pre-light);
 }
 .poster:hover img {
-    border-color: var(--color-main-light);
+    border-color: var(--color-light);
 }
 
 .pagination .pure-button {
     background-color: var(--background-pre-light);
-    color: var(--color-main-light)
+    color: var(--color-light)
 }
 .pagination .pure-button-active {
     background-color: var(--background-pre-light);
@@ -216,15 +216,15 @@ a.post-tag:hover { color: var(--color-main-light); }
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: var(--background-main-dark);
-        color: var(--color-main-dark);
+        background-color: var(--background-dark);
+        color: var(--color-dark);
     }
     pre { background-color: var(--background-pre-dark); }
 
     .pure-menu-selected .pure-menu-link,
     .pure-menu-selected .pure-menu-link:visited
     {
-        color: var(--color-main-dark);
+        color: var(--color-dark);
     }
     .pure-menu-link:hover {
         background-color: var(--background-pre-dark);
@@ -236,7 +236,7 @@ a.post-tag:hover { color: var(--color-main-light); }
     .post-title a,
     .post-content a
     {
-        color: var(--color-main-dark);
+        color: var(--color-dark);
     }
 
     .post-meta,
@@ -244,10 +244,10 @@ a.post-tag:hover { color: var(--color-main-light); }
     .pure-menu-link,
     #footer a
     {
-        color: var(--color-second-dark);
+        color: var(--color-secondary-dark);
     }
-    #footer a:hover { color: var(--color-main-dark); }
-    a.post-tag:hover { color: var(--color-main-dark); }
+    #footer a:hover { color: var(--color-dark); }
+    a.post-tag:hover { color: var(--color-dark); }
 
     .poster img,
     .post-content img
@@ -255,15 +255,15 @@ a.post-tag:hover { color: var(--color-main-light); }
         border-color: var(--background-pre-dark);
     }
     .poster:hover img {
-        border-color: var(--color-main-dark);
+        border-color: var(--color-dark);
     }
 
     .pagination .pure-button {
         background-color: var(--background-pre-dark);
-        color: var(--color-main-dark)
+        color: var(--color-dark)
     }
     .pagination .pure-button-active {
-        background-color: var(--color-second-dark);
+        background-color: var(--color-secondary-dark);
     }
 
     @media (min-width: 48em) {

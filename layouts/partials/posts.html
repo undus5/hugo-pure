@@ -26,8 +26,8 @@
 {{- end }}
 
 {{- $columnClass := "" }}
-{{- if or $pctx.Params.doubleColumns .Site.Params.doubleColumns }}
-{{- $columnClass = "double-columns" }}
+{{- if $pctx.Param "doubleColumns" }}
+    {{- $columnClass = "double-columns" }}
 {{- end }}
 <div class="pure-g post-list {{ $columnClass -}}">
     {{- range $pages }}
