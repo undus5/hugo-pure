@@ -60,7 +60,7 @@
 
 {{- if and (eq $t "list") ($p.Param "showSummary") }}
 <div class="post-content">{{- $p.Summary }}</div>
-{{- if $p.Truncated }}
+{{- if and $p.Site.Params.showTruncation $p.Truncated }}
     <p class="post-meta">...</p>
 {{- end }}
 {{- end }}

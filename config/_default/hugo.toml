@@ -22,6 +22,7 @@ v = "/:slugorfilename/"
 #[params]
 #doubleColumns = true
 #showCorner = true
+#showTruncation = true
 
 #[outputFormats]
 #[outputFormats.myjson]
