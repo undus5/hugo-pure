@@ -13,12 +13,6 @@ name       = "分类"
 weight     = 9
 
 [[footer]]
-identifier = "copyright"
-pageRef    = "/"
-name       = "©2023-2024"
-weight     = 1
-
-[[footer]]
 identifier  = "github"
 url         = "https://github.com/undus5/hugo-pure"
 name        = "Github"

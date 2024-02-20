@@ -1,6 +1,11 @@
 {{- $pctx := . }}
 <div id="footer">
 
+<span>
+    &copy;
+    {{- time.Now | time.Format "2006" }}
+</span>
+
 {{- $menus := .Site.Menus.footer }}
 {{- range $menus }}
 {{- $url := .URL }}
@@ -24,17 +29,6 @@
         {{- .Name | safeHTML -}}
     {{- end -}}
 </a>
-{{- end }}
-
-{{- if and .Site.IsMultiLingual .IsTranslated }}
-{{ range $i, $p := .AllTranslations }}
-    {{- if gt $i 0 }}|{{ end }}
-    {{- if eq $p.Lang $pctx.Lang -}}
-        {{- $p.Language.LanguageName -}}
-    {{- else -}}
-        <a href="{{- $p.RelPermalink -}}">{{- $p.Language.LanguageName -}}</a>
-    {{- end }}
-{{- end }}
 {{- end }}
 
 </div>

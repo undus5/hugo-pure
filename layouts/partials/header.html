@@ -1,6 +1,7 @@
 {{- $pctx := . }}
 <div id="header">
-<div class="pure-menu pure-menu-horizontal">
+<div class="main-menu pure-menu pure-menu-horizontal">
+
 <ul class="pure-menu-list">
 
 {{- $menus := .Site.Menus.main }}
@@ -37,5 +38,19 @@
 {{- end }}
 
 </ul>
+
+<div class="translation-menu">
+{{- if and .Site.IsMultiLingual .IsTranslated }}
+{{ range $i, $p := .AllTranslations }}
+    {{- if gt $i 0 }}|{{ end }}
+    {{- if eq $p.Lang $pctx.Lang -}}
+        <span>{{- $p.Language.LanguageName -}}</span>
+    {{- else -}}
+        <a href="{{- $p.RelPermalink -}}">{{- $p.Language.LanguageName -}}</a>
+    {{- end }}
+{{- end }}
+{{- end }}
+</div>
+
 </div>
 </div>
