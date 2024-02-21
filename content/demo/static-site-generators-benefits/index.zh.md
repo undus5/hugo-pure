@@ -1,20 +1,19 @@
 +++
-title       = "静态网站生成器的优点"
+title       = "静态网站生成框架的优点"
 lastmod     = 2023-02-22T11:49:46+08:00
 date        = 2023-02-20T11:49:46+08:00
 tags        = ["DemoTag"]
 showSummary = true
 weight      = 100
 [[sources]]
-title = "Source"
+title = "来源"
 url   = "https://gohugo.io/about/benefits/"
 [[sources]]
-title = "Documentation"
+title = "官方文档"
 url   = "https://gohugo.io/documentation/"
 +++
 
-Improved performance, security and ease of use are just a few of
-the reasons static site generators are so appealing.
+页面加载速度提升, 安全性提升, 和易用性提升只是静态网站生成框架诸多优点的其中一小部分.
 
 The purpose of website generators is to render content into HTML files.
 Most are “dynamic site generators.” That means the HTTP server—i.e.,
