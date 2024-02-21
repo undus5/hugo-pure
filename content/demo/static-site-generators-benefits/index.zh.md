@@ -1,9 +1,10 @@
 +++
-title       = "Benefits of static site generators"
+title       = "静态网站生成器的优点"
 lastmod     = 2023-02-22T11:49:46+08:00
 date        = 2023-02-20T11:49:46+08:00
 tags        = ["DemoTag"]
 showSummary = true
+weight      = 100
 [[sources]]
 title = "Source"
 url   = "https://gohugo.io/about/benefits/"

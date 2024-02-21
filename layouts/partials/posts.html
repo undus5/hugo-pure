@@ -1,6 +1,6 @@
 {{- $pctx := . -}}
 
-{{- $pages := partial "getpages.html" $pctx }}
+{{- $pages := partial "functions/getpages.html" $pctx }}
 
 {{- $pageSize := $pctx.Params.paginate }}
 {{- if $pageSize }}

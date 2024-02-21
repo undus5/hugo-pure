@@ -10,18 +10,7 @@
 {{- end }}
 
 {{- range $menus }}
-{{- $url := .URL }}
-{{- if .Page }}
-    {{- $url = .Page.RelPermalink }}
-    {{- if and .Params.format }}
-        {{- $fmt := (.Page.AlternativeOutputFormats).Get .Params.format }}
-        {{- if not $fmt }}
-        {{- continue }}
-        {{- else }}
-        {{- $url = $fmt.RelPermalink }}
-        {{- end }}
-    {{- end }}
-{{- end }}
+{{ $url := partial "functions/getmenuurl.html" (dict "pctx" $pctx "entry" .) }}
 <li class="pure-menu-item {{ if eq $pctx.RelPermalink $url }} pure-menu-selected {{ end -}}">
     <a
         class="pure-menu-link"

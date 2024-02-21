@@ -23,7 +23,7 @@
 ```
 +++
 paginate      = 1      # 每页文章数
-doubleColumns = true   # 列表风格 (单列/双列), 也可在 config.toml 全局配置
+doubleColumns = true   # 列表风格 (单列/双列), 也可在 hugo.toml 全局配置
 +++
 ```
 

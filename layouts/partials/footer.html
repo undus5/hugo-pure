@@ -8,18 +8,7 @@
 
 {{- $menus := .Site.Menus.footer }}
 {{- range $menus }}
-{{- $url := .URL }}
-{{- if .Page }}
-    {{- $url = .Page.RelPermalink }}
-    {{- if and .Params.format }}
-        {{- $fmt := (.Page.AlternativeOutputFormats).Get .Params.format }}
-        {{- if not $fmt }}
-            {{- continue }}
-        {{- else }}
-            {{- $url = $fmt.RelPermalink }}
-        {{- end }}
-    {{- end }}
-{{- end }}
+{{ $url := partial "functions/getmenuurl.html" (dict "pctx" $pctx "entry" .) }}
 <a href="{{- $url -}}"
     {{ with .Params.targetBlank }}target="_blank"{{ end -}}
 >

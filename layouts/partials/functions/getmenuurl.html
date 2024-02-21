@@ -1,0 +1,25 @@
+{{ $pctx := .pctx }}
+{{ $entry := .entry }}
+
+{{ $url := .entry.URL }}
+{{ if $entry.Page }}
+    {{ $page := $entry.Page }}
+    {{ if $page.IsTranslated }}
+        {{ $lang := $pctx.Language.Lang }}
+        {{ $t := where $page.AllTranslations "Language.Lang" "eq" $lang }}
+        {{ if $t }}
+            {{ $page = index $t 0 }}
+        {{ end }}
+    {{ end }}
+
+    {{ $url = $page.RelPermalink }}
+    {{ with $entry.Params.format }}
+        {{ $p := $page.AlternativeOutputFormats.Get . }}
+        {{ if $p }}
+            {{ $url = $p.RelPermalink }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $url }}
+

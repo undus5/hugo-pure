@@ -23,7 +23,7 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://undus5.g
 ```
 +++
 paginate      = 1      # number of posts per page
-doubleColumns = true   # list style, also available in config.toml
+doubleColumns = true   # list style, also available in global hugo.toml
 +++
 ```
 

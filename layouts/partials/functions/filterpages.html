@@ -1,0 +1,10 @@
+{{ $pages := . }}
+
+{{ $pages = where $pages "Type" "!=" "hidden" -}}
+
+{{ if ne hugo.Environment "demo" }}
+{{ $pages = where $pages "Section" "!=" "demo" -}}
+{{ end }}
+
+{{ return $pages }}
+
