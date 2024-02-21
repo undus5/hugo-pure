@@ -31,8 +31,9 @@ doubleColumns = true   # 列表风格 (单列/双列), 也可在 config.toml 全
 
 ```
 +++
-showToc     = true   # 开启章节索引
-showSummary = true   # 在列表中显示摘要
+showToc     = true       # 开启章节索引
+showSummary = true       # 在列表中显示摘要
+type        = "hidden"   # 不在任何列表里显示 (home, section, rss)
 
 # 添加来源外链, 与标签同列显示
 

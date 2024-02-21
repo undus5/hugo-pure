@@ -1,22 +1,6 @@
 {{- $pctx := . -}}
-{{- $pages := slice -}}
 
-{{- if $.IsHome -}}
-    {{- $pages = .Site.RegularPages -}}
-    {{- $pages = where $pages "Section" "!=" "v" -}}
-    {{- $pages = where $pages "Type" "!=" "search" -}}
-    {{- if ne hugo.Environment "demo" }}
-    {{- $pages = where $pages "Section" "!=" "demo" -}}
-    {{- end }}
-{{- else -}}
-    {{- $pages = $pctx.Pages -}}
-{{- end -}}
-
-{{- /* $pages = $pages.ByPublishDate.Reverse */ -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-    {{- $pages = $pages | first $limit -}}
-{{- end -}}
+{{- $pages := partial "getpages.html" $pctx }}
 
 {{- $pageSize := $pctx.Params.paginate }}
 {{- if $pageSize }}

@@ -1,17 +1,12 @@
 {{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-{{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
-{{- $pages = where $pctx.RegularPages "Section" "!=" "v" -}}
-{{- else -}}
-{{- $pages = $pctx.Pages -}}
-{{- end -}}
-{{- $pages = where $pages "Type" "!=" "search" -}}
-{{- /* $pages = $pages.ByPublishDate.Reverse */ -}}
+
+{{- $pages := partial "getpages.html" $pctx }}
+
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
 {{- end -}}
+
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

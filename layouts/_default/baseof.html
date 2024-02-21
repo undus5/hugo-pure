@@ -19,15 +19,7 @@
 {{- partial "header.html" . }}
 
 <div id="main">
-    {{- if .Site.Params.showCorner }}
-    <div class="corner-indicator corner-top"></div>
-    {{- end }}
-
     {{ block "main" . }}{{ end }}
-
-    {{- if .Site.Params.showCorner }}
-    <div class="corner-indicator corner-bottom"></div>
-    {{- end }}
 </div>
 
 {{- partial "footer.html" . }}

@@ -1,4 +1,4 @@
 +++
 title = "Search"
-type = "search"
+type  = "hidden"
 +++

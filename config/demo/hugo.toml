@@ -15,3 +15,36 @@ languageCode = "zh-cn"
 languageName = "中"
 weight       = 3
 title        = "Hugo 主题: hugo-pure"
+
+[menus]
+[[menus.main]]
+identifier = "home"
+name       = "Home"
+pageRef    = "/"
+weight     = 1
+
+[[menus.main]]
+identifier = "tags"
+name       = "Tags"
+pageRef    = "/tags/"
+weight     = 9
+
+[[menus.footer]]
+identifier = "github"
+name       = "Github"
+url        = "https://github.com/undus5/hugo-pure"
+weight     = 3
+[[menus.footer.params]]
+targetBlank = true
+iconClass   = "fa-brands fa-github"
+
+[[menus.footer]]
+identifier = "rss"
+name       = "RSS"
+pageRef    = "/"
+weight     = 5
+[[menus.footer.params]]
+targetBlank = true
+iconClass   = "fa-solid fa-rss"
+format      = "rss"
+

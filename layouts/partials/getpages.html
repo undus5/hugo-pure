@@ -1,0 +1,23 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}
+{{ $pctx = .Site }}
+{{- end -}}
+
+{{- $pages := slice }}
+
+{{- if .IsHome -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else if .IsSection -}}
+{{- $pages = $pctx.RegularPagesRecursive -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+
+{{- $pages = where $pages "Type" "!=" "hidden" -}}
+
+{{- if ne hugo.Environment "demo" }}
+{{- $pages = where $pages "Section" "!=" "demo" -}}
+{{- end }}
+
+{{- return $pages }}
+

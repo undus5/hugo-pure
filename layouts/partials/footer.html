@@ -26,7 +26,7 @@
     {{- with .Params.iconClass }}
         <i class="{{- . -}}"></i>
     {{- else }}
-        {{- .Name | safeHTML -}}
+        {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
     {{- end -}}
 </a>
 {{- end }}

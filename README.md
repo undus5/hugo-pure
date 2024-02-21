@@ -31,8 +31,9 @@ doubleColumns = true   # list style, also available in config.toml
 
 ```
 +++
-showToc     = true   # enable table of contents
-showSummary = true   # show summary on list
+showToc     = true       # enable table of contents
+showSummary = true       # show summary on list
+type        = "hidden"   # hidden from any list (home, section, rss)
 
 # add external source links beside tags
 
