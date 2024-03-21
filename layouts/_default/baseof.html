@@ -9,6 +9,7 @@
     {{- $css = $css | append (resources.Get "main.css") }}
     {{- $css = $css | append (resources.Get "syntax-light.css") }}
     {{- $css = $css | append (resources.Get "syntax-dark.css") }}
+    {{- $css = $css | append (resources.Get "overwrite.css") }}
     {{- $css = $css | resources.Concat "bundle.css" }}
     {{- $css = $css | resources.Minify }}
     <link rel="stylesheet" href="{{- $css.RelPermalink -}}">

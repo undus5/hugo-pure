@@ -15,6 +15,23 @@ noClasses = false
 _merge    = "deep"
 endLevel  = 2
 
+[menus]
+
+[[menus.main]]
+identifier = "home"
+name       = "Home"
+pageRef    = "/"
+weight     = 1
+
+[[menus.footer]]
+identifier  = "rss"
+pageRef     = "/"
+weight      = 5
+[menus.footer.params]
+targetBlank = true
+iconClass   = "fa-solid fa-rss"
+format      = "rss"
+
 #[params]
 #doubleColumns = true
 
