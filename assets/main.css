@@ -84,6 +84,8 @@ pre code {
 .corner-bottom { margin-top: 0.5em; }
 
 .post-list {
+    display: flex;
+    flex-flow: row wrap;
     row-gap: 1.6em;
     column-gap: 2em;
 }

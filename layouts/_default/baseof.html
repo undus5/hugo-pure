@@ -4,14 +4,21 @@
     {{- partial "meta.html" . }}
 
     {{- $css := slice }}
-    {{- $css = $css | append (resources.Get "pure.css") }}
-    {{- $css = $css | append (resources.Get "grids-responsive.css") }}
+
+    <!-- https://purecss.io/ -->
+    {{- $css = $css | append (resources.Get "pure-base.css") }}
+    {{- $css = $css | append (resources.Get "pure-menus.css") }}
+    {{- $css = $css | append (resources.Get "pure-buttons.css") }}
+    {{- $css = $css | append (resources.Get "pure-forms.css") }}
+
     {{- $css = $css | append (resources.Get "main.css") }}
     {{- $css = $css | append (resources.Get "syntax-light.css") }}
     {{- $css = $css | append (resources.Get "syntax-dark.css") }}
     {{- $css = $css | append (resources.Get "overwrite.css") }}
+
     {{- $css = $css | resources.Concat "bundle.css" }}
     {{- $css = $css | resources.Minify }}
+
     <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
 </head>
 

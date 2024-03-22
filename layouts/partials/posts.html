@@ -13,9 +13,9 @@
 {{- if $pctx.Param "doubleColumns" }}
     {{- $columnClass = "double-columns" }}
 {{- end }}
-<div class="pure-g post-list {{ $columnClass -}}">
+<div class="post-list {{ $columnClass -}}">
     {{- range $pages }}
-        <article class="pure-u-1 post-card">
+        <article class="post-card">
             {{- partial "page.html" (dict "page" . "type" "list") }}
         </article>
     {{- end }}
