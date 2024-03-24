@@ -94,7 +94,7 @@ pre code {
 }
 .post-card {
     width: 100%;
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
 }
 .post-card__title {
     margin: 0;
