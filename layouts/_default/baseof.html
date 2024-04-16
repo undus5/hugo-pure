@@ -4,22 +4,21 @@
     {{- partial "meta.html" . }}
 
     {{- $css := slice }}
-
     <!-- https://purecss.io/ -->
     {{- $css = $css | append (resources.Get "pure-base.css") }}
     {{- $css = $css | append (resources.Get "pure-menus.css") }}
     {{- $css = $css | append (resources.Get "pure-buttons.css") }}
     {{- $css = $css | append (resources.Get "pure-forms.css") }}
-
+    <!-- main.css -->
     {{- $css = $css | append (resources.Get "main.css") }}
     {{- $css = $css | append (resources.Get "syntax-light.css") }}
     {{- $css = $css | append (resources.Get "syntax-dark.css") }}
-    {{- $css = $css | append (resources.Get "overwrite.css") }}
-
+    <!-- packing css -->
     {{- $css = $css | resources.Concat "bundle.css" }}
     {{- $css = $css | resources.Minify }}
-
     <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
+
+    {{- block "css" . }}{{- end }}
 </head>
 
 <body>
@@ -32,11 +31,6 @@
 
 {{- partial "footer.html" . }}
     
-{{- $js := slice }}
-{{- $js = $js | append (resources.Get "overwrite.js") }}
-{{- $js = $js | resources.Concat "bundle.js" }}
-{{- $js = $js | resources.Minify }}
-<script src="{{- $js.RelPermalink -}}"></script>
-
+{{- block "js" . }}{{- end }}
 </body>
 </html>
