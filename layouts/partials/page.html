@@ -53,9 +53,13 @@
     {{- if $p.Params.tags }}
         {{ if or $p.Date $p.Params.sources }}&nbsp;{{ end }}
         {{ $tags := $p.GetTerms "tags" }}
-        {{- partial "tags" $tags }}
+        {{- partial "tags.html" $tags }}
     {{- end }}
 </div>
+{{- end }}
+
+{{- if and (ne $t "list") ($p.Param "MPDURL") }}
+{{- partial "dash.html" $p }}
 {{- end }}
 
 {{- if and (eq $t "list") ($p.Param "showSummary") }}

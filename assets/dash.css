@@ -1,0 +1,205 @@
+/* DASH Video Player Style */
+
+:root {
+    --track-color: #d0d0d0;
+}
+.hidden {
+    display: none;
+}
+
+.video-container {
+    position: relative;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.video-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.video {
+    width: 100%;
+}
+
+.controls-container {
+    padding-top: 0.6em;
+    background: rgba(0, 0, 0, 0.6);
+}
+.controls-fullscreen {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/******************************************************************************/
+/* Seekbar */
+/******************************************************************************/
+
+.focus-wrapper {
+    width: 0;
+    height: 0.3em;
+    overflow: hidden;
+}
+
+.seekbar-container {
+    padding: 0 1em;
+}
+
+.seekbar-wrapper {
+    position: relative;
+}
+.seekbar-track,
+.seekbar-buffer,
+.seekbar-thumb,
+.seekbar-cursor
+{
+    position: absolute;
+    top: 0;
+}
+
+.seekbar-track,
+.seekbar-buffer
+{
+    width: 100%;
+    height: 0.3em;
+}
+.seekbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 3;
+}
+.seekbar-buffer {
+    background: #767676;
+    z-index: 1;
+}
+.seekbar-thumb,
+.seekbar-cursor
+{
+    width: 0.3em;
+    height: 0.3em;
+    background: #fff;
+    z-index: 2;
+}
+
+.thumbnail-container {
+    position: absolute;
+    bottom: 1.2em;
+    width: 9em;
+    height: 4.5em;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform-origin: bottom left;
+}
+.thumbnail-label {
+    text-shadow: 1px 1px #000;
+}
+
+/******************************************************************************/
+/* Toolbar */
+/******************************************************************************/
+
+.toolbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.6em;
+}
+.toolbar-left,
+.toolbar-right
+{
+    display: flex;
+    align-items: center;
+}
+
+.control-button {
+    padding: 0.6em;
+}
+.control-button:hover {
+    color: #fff;
+}
+
+.play-button span {
+    display: flex;
+    min-width: 0.8em;
+}
+.mute-button span
+{
+    display: flex;
+    justify-content: center;
+    min-width: 1.3em;
+}
+
+.video-time,
+.duration,
+.time-separator
+{
+    user-select: none;
+}
+
+/******************************************************************************/
+/* Volume Range Input */
+/******************************************************************************/
+
+.volume-container {
+    display: flex;
+    align-items: center;
+}
+
+.volume-slider {
+    background: transparent; /* Otherwise white in Chrome */
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    max-width: 3em;
+}
+
+.volume-slider:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* Track for Webkit/Blink */
+.volume-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.3em;
+    background: var(--track-color);
+    border: 1px solid var(--track-color);
+    border-radius: 1em;
+    position: relative;
+    top: -1px;
+}
+
+.volume-slider:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+
+/* Track for Firefox */
+.volume-slider::-moz-range-track {
+    width: 100%;
+    height: 0.2em;
+    background: var(--track-color);
+    border: 1px solid var(--track-color);
+    border-radius: 1em;
+    position: relative;
+    top: 3px;
+}
+
+/* Thumb for WebKit/Blink */
+.volume-slider::-webkit-slider-thumb {
+    width: 0.8em;
+    height: 0.8em;
+    background: var(--track-color);
+    border-radius: 50%;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    position: relative;
+    top: -5px;
+}
+
+/* Thumb for Firefox */
+.volume-slider::-moz-range-thumb {
+    width: 0.8em;
+    height: 0.8em;
+    background: var(--track-color);
+    border: 1px solid var(--track-color);
+    border-radius: 50%;
+}
+

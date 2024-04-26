@@ -12,7 +12,9 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://undus5.g
 
 - Multilingual support
 
-- No Javascript
+- No Javascript (Main Layout)
+
+- Video player based on dash.js
 
 - Useful custom front matters
 
@@ -34,6 +36,7 @@ doubleColumns = true   # list style, also available in global hugo.toml
 showToc     = true       # enable table of contents
 showSummary = true       # show summary on list
 type        = "hidden"   # hidden from any list (home, section, rss)
+MPDURL      = ""         # URL for MPEG-DASH MPD file
 
 # add external source links beside tags
 

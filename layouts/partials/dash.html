@@ -1,0 +1,76 @@
+{{- $p := . }}
+
+{{- $css := slice }}
+{{- $css = $css | append (resources.Get "dash.css") }}
+{{- $css = $css | resources.Concat "dash.css" }}
+{{- $css = $css | resources.Minify }}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}">
+
+<div class="video-container">
+    <div class="video-wrapper">
+        <video class="video"></video>
+    </div>
+    <div class="controls-container">
+        <div class="seekbar-container">
+            <div class="seekbar-wrapper">
+                <div class="focus-wrapper">
+                    <input class="focus-input" type="range">
+                </div>
+                <div class="seekbar-track"></div>
+                <div class="seekbar-buffer"></div>
+                <div class="seekbar-thumb"></div>
+                <div class="seekbar-cursor hidden"></div>
+                <div class="thumbnail-container hidden">
+                    <div class="thumbnail-label"></div>
+                </div>
+            </div>
+        </div>
+        <div class="toolbar-container">
+            <div class="toolbar-left">
+                <div class="play-button control-button">
+                    <span class="fa-solid fa-play"></span>
+                </div>
+                <div class="mute-button control-button">
+                    <span class="fa-solid fa-volume-high"></span>
+                </div>
+                <div class="volume-container control-button">
+                    <input class="volume-slider" type="range" value="1" min="0" max="1" step=".01">
+                </div>
+                <div class="control-button">
+                    <span class="video-time">00:00</span>
+                </div>
+                <span class="time-separator">/</span>
+                <div class="control-button">
+                    <span class="duration">00:00</span>
+                </div>
+            </div>
+            <div class="toolbar-right">
+                <!--
+                <div class="caption-button control-button">
+                    <span class="fa-solid fa-closed-captioning"></span>
+                </div>
+                <div class="bitrate-button control-button">
+                    <span class="fa-solid fa-bars-staggered"></span>
+                </div>
+                -->
+                <div class="fullscreen-button control-button">
+                    <span class="fa-solid fa-expand"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{- $js := slice }}
+{{- $js = $js | append (resources.Get "dash.all.min.js") }}
+{{- $js = $js | append (resources.Get "dash.js") }}
+{{- $js = $js | resources.Concat "dash.js" }}
+{{- $js = $js | resources.Minify }}
+<script src="{{- $js.RelPermalink -}}"></script>
+
+{{- with $p.Params.MPDURL }}
+<script>
+    const MPDURL = "{{- . -}}";
+    DASHPlayer(MPDURL);
+</script>
+{{- end }}

@@ -5,10 +5,7 @@
 
     {{- $css := slice }}
     <!-- https://purecss.io/ -->
-    {{- $css = $css | append (resources.Get "pure-base.css") }}
-    {{- $css = $css | append (resources.Get "pure-menus.css") }}
-    {{- $css = $css | append (resources.Get "pure-buttons.css") }}
-    {{- $css = $css | append (resources.Get "pure-forms.css") }}
+    {{- $css = $css | append (resources.Get "pure.css") }}
     <!-- main.css -->
     {{- $css = $css | append (resources.Get "main.css") }}
     {{- $css = $css | append (resources.Get "syntax-light.css") }}

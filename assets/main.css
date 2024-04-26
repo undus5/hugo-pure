@@ -20,7 +20,6 @@ html { overflow-y: scroll; }
 body { min-height: 100vh; }
 img { width: 100%; }
 figure { margin: 0; }
-.hidden { display: hidden; }
 .prevent-default { pointer-events: none; }
 
 pre code {
