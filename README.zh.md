@@ -12,9 +12,7 @@
 
 - 多语言支持
 
-- 无 Javascript (主要布局)
-
-- 基于 dash.js 的播放器
+- 无 Javascript
 
 - 自定义选项 (front matter)
 
@@ -36,7 +34,6 @@ doubleColumns = true   # 列表风格 (单列/双列), 也可在 hugo.toml 全�
 showToc     = true       # 开启章节索引
 showSummary = true       # 在列表中显示摘要
 type        = "hidden"   # 不在任何列表里显示 (home, section, rss)
-MPDURL      = ""         # MPEG-DASH MPD 文件链接
 
 # 添加来源外链, 与标签同列显示
 

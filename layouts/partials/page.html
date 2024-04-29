@@ -58,10 +58,6 @@
 </div>
 {{- end }}
 
-{{- if and (ne $t "list") ($p.Param "MPDURL") }}
-{{- partial "dash.html" $p }}
-{{- end }}
-
 {{- if and (eq $t "list") ($p.Param "showSummary") }}
 <div class="post-content">{{- $p.Summary }}</div>
 {{- end }}
