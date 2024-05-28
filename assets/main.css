@@ -114,7 +114,15 @@ a.post-tag:hover { text-decoration: none; }
 
 .post-title a { text-decoration: none; }
 .post-title a:hover { text-decoration: underline; }
-.post-title h1 { margin-top: 0; }
+.post-title h1 {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+}
+.post-title h2 {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+}
 .post-content {
     line-height: 1.6em;
     margin-top: 1em;

@@ -16,16 +16,18 @@
 <div class="post-title">
     {{- if eq $t "list" }}
         <a href="{{- $p.RelPermalink -}}">
+    {{- end }}
         <h1>
             {{- if $p.Draft }}*{{ end }}
             {{ $p.Title -}}
         </h1>
+        {{- if $p.Params.subtitle }}
+        <h2>
+            {{ $p.Params.subtitle -}}
+        </h2>
+        {{- end }}
+    {{- if eq $t "list" }}
         </a>
-    {{- else }}
-        <h1>
-            {{- if $p.Draft }}*{{ end }}
-            {{ $p.Title -}}
-        </h1>
     {{- end }}
 </div>
 {{- end }}
