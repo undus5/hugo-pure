@@ -10,6 +10,7 @@
 {{- range $menus }}
 {{ $url := partial "functions/getmenuurl.html" (dict "pctx" $pctx "entry" .) }}
 <a href="{{- $url -}}"
+   title="{{- or (i18n (upper .Identifier)) .Name | safeHTML -}}"
     {{ with .Params.targetBlank }}target="_blank"{{ end -}}
 >
     {{- with .Params.iconClass }}
