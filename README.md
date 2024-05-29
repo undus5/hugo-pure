@@ -2,7 +2,7 @@
 
 English|[中文](https://github.com/undus5/hugo-pure/blob/main/README.zh.md)
 
-A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://undus5.github.io/hugo-pure/)
+A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://hugo-pure.undus.net)
 
 ## Features
 
