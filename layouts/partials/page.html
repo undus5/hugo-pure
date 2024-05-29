@@ -4,9 +4,9 @@
 {{- if eq $t "list" }}
 {{- $poster := $p.Resources.Get "poster.webp" }}
 {{- if $poster }}
-<a href="{{- $p.RelPermalink -}}">
+<a class="poster-link" href="{{- $p.RelPermalink -}}">
     <figure class="poster poster-mask">
-        <img src="{{- $poster.RelPermalink -}}">
+        <img class="poster-img" src="{{- $poster.RelPermalink -}}">
     </figure>
 </a>
 {{- end }}
