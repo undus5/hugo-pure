@@ -1,5 +1,6 @@
 +++
 title       = "Benefits of static site generators"
+subtitle    = "Fast and Secure"
 lastmod     = 2023-02-22T11:49:46+08:00
 date        = 2023-02-20T11:49:46+08:00
 tags        = ["DemoTag"]
