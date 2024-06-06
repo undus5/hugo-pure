@@ -14,6 +14,8 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://hugo-pur
 
 - No Javascript
 
+- Disallow AI crawler (robots.txt)
+
 - Useful custom front matters
 
 ## Custom Front Matters

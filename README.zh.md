@@ -14,7 +14,9 @@
 
 - 无 Javascript
 
-- 自定义选项 (front matter)
+- 禁止 AI 爬虫 (robots.txt)
+
+- 实用的自定义选项 (front matters)
 
 ## 自定义选项
 
