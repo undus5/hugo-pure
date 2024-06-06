@@ -62,4 +62,4 @@ $ cd hugo-pure
 $ ./demo.sh run
 ```
 
-favicon 文件位置在 `assets/favicon.png`, 默认为空, 如果文件存在将会自动加载.
+favicon 位置在 `assets/favicon.png`, 默认为空, 如果文件存在将会自动加载.

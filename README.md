@@ -62,5 +62,5 @@ $ cd hugo-pure
 $ ./demo.sh run
 ```
 
-The favicon file location is `assets/favicon.png`, it's empty by default,
-it will be loaded automatically if file exists.
+The favicon is empty by default, if needed, put one into `assets/favicon.png`,
+it will be loaded automatically.
