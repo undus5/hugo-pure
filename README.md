@@ -61,3 +61,6 @@ $ echo "theme = 'hugo-pure'" >> config.toml
 $ cd hugo-pure
 $ ./demo.sh run
 ```
+
+The favicon file location is `assets/favicon.png`, it's empty by default,
+it will be loaded automatically if file exists.

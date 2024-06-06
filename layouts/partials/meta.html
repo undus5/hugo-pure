@@ -40,4 +40,9 @@
 <title>{{- $pageTitle -}}</title>
 <link rel="canonical" href="{{- .Permalink -}}">
 
-<link rel="icon" type="image/png" href="{{- relURL "favicon.png" -}}">
+{{- $favicon := resources.Get "favicon.png" }}
+{{- with $favicon }}
+<link rel="icon" type="image/png" href="{{- .RelPermalink -}}">
+{{- else }}
+<link rel="shortcut icon" href="#"> <!-- To suppress browser's favicon 404 error -->
+{{- end }}
