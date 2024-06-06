@@ -59,5 +59,5 @@ $ echo "theme = 'hugo-pure'" >> config.toml
 
 # Or you can run demo directly
 $ cd hugo-pure
-$ ./rundemo.sh
+$ ./demo.sh run
 ```
