@@ -5,15 +5,15 @@
     &copy;
     {{- time.Now | time.Format "2006" }}
 </span>
-
-{{- $menus := .Site.Menus.footer }}
-{{- range $menus }}
-{{ $url := partial "functions/getmenuurl.html" (dict "pctx" $pctx "entry" .) }}
+&nbsp;
+{{- range $i, $m := .Site.Menus.footer }}
+{{ if ne $i 0 }}&nbsp;{{ end }}
+{{ $url := partial "functions/getmenuurl.html" (dict "pctx" $pctx "entry" $m) }}
 <a href="{{- $url -}}"
-   title="{{- or (i18n (upper .Identifier)) .Name | safeHTML -}}"
-    {{ with .Params.targetBlank }}target="_blank"{{ end -}}
+   title="{{- or (i18n (upper $m.Identifier)) $m.Name | safeHTML -}}"
+    {{ with $m.Params.targetBlank }}target="_blank"{{ end -}}
 >
-    {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
+    {{- or (i18n (upper $m.Identifier)) $m.Name | safeHTML -}}
 </a>
 {{- end }}
 
