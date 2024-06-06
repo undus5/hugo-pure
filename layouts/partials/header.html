@@ -17,11 +17,7 @@
         href="{{- $url -}}"
         {{ with .Params.targetBlank }}target="_blank"{{ end -}}
     >
-        {{- with .Params.iconClass }}
-            <i class="{{- . -}}"></i>
-        {{- else }}
-            {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
-        {{- end }}
+        {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
     </a>
 </li>
 {{- end }}

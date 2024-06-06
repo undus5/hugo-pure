@@ -31,18 +31,15 @@ weight     = 9
 identifier = "github"
 name       = "Github"
 url        = "https://github.com/undus5/hugo-pure"
-weight     = 3
+weight     = 7
 [[menus.footer.params]]
 targetBlank = true
-iconClass   = "fa-brands fa-github"
 
 [[menus.footer]]
 identifier = "rss"
-name       = "RSS"
+name       = "Feeds"
 pageRef    = "/"
 weight     = 5
 [[menus.footer.params]]
 targetBlank = true
-iconClass   = "fa-solid fa-rss"
 format      = "rss"
-

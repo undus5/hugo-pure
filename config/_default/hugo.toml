@@ -25,11 +25,11 @@ weight     = 1
 
 [[menus.footer]]
 identifier  = "rss"
+name        = "Feeds"
 pageRef     = "/"
 weight      = 5
 [menus.footer.params]
 targetBlank = true
-iconClass   = "fa-solid fa-rss"
 format      = "rss"
 
 #[params]
