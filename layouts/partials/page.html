@@ -35,7 +35,7 @@
 {{- if or $p.Date $p.Params.sources $p.Params.tags }}
 <div class="post-meta">
     {{- with $p.Date }}
-        <span>{{- .Format "2006.01.02" -}}</span>
+        <span>{{- .Format "2006-01-02" -}}</span>
     {{- end }}
 
     {{- if $p.Params.sources }}
