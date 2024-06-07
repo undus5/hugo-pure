@@ -31,7 +31,7 @@
 {{- end }}
 
 {{- $pctx := . -}}
-{{- $pages := partial "functions/getpages.html" $pctx }}
+{{- $pages := partial "functions/get-pages.html" $pctx }}
 
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
