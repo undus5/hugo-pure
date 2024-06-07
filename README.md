@@ -18,6 +18,20 @@ A simple and clean [Hugo](https://gohugo.io) theme, [Live Demo](https://hugo-pur
 
 - Useful custom front matters
 
+## Usage
+
+```
+# Clone theme to your own project
+$ git submodule add https://github.com/undus5/hugo-pure themes/hugo-pure
+
+# Add theme to your project's config file
+$ echo "theme = 'hugo-pure'" >> config.toml
+
+# Or you can run demo directly
+$ cd hugo-pure
+$ ./demo.sh run
+```
+
 ## Custom Front Matters
 
 ### List Page (_index.md)
@@ -50,19 +64,50 @@ url   = "https://gohugo.io/about/"
 +++
 ```
 
-## Usage
+## Customization
 
-```
-# Clone theme to your own project
-$ git submodule add https://github.com/undus5/hugo-pure themes/hugo-pure
+### Favicon
 
-# Add theme to your project's config file
-$ echo "theme = 'hugo-pure'" >> config.toml
-
-# Or you can run demo directly
-$ cd hugo-pure
-$ ./demo.sh run
-```
-
-The favicon is empty by default, if needed, put one into `assets/favicon.png`,
+The favicon is empty by default, if needed, put one into `assets/favicon.png` in your own project,
 it will be loaded automatically.
+
+### CSS & JS
+
+If you want to overwrite CSS or add JS, just create some partial templates
+in your own project with specific block names, for examples:
+
+`layouts/partials/mycss.html`
+
+```
+{{ define "css" }}
+<style> ... </style>
+{{ end }}
+```
+
+`layouts/partials/myjs.html`
+
+```
+{{ define "js" }}
+<script> ... </script>
+{{ end }}
+```
+
+Or `layouts/partials/myassets.html`, `assets/mystyle.css`, `assets/myscript.js`
+
+```
+{{ define "css" }}
+    {{- $css := slice }}
+    {{- $css = $css | append (resources.Get "mystyle.css") }}
+    {{- $css = $css | resources.Concat "mystyle.bundle.css" }}
+    {{- $css = $css | resources.Minify }}
+    <link rel="stylesheet" href="{{- $css.RelPermalink -}}">
+{{ end }}
+
+{{ define "js" }}
+    {{- $js := slice }}
+    {{- $js = $js | append (resources.Get "myscript.css") }}
+    {{- $js = $js | resources.Concat "myscript.bundle.css" }}
+    {{- $js = $js | resources.Minify }}
+    <script src="{{- $js.RelPermalink -}}"></script>
+{{ end }}
+```
