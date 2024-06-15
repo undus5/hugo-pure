@@ -1,0 +1,8 @@
+{{- $favicon := resources.Get "favicon.png" }}
+{{- with $favicon }}
+<link rel="icon" type="image/png" href="{{- .RelPermalink -}}">
+{{- else }}
+<!-- To suppress browser's favicon 404 error --> <!-- https://stackoverflow.com/a/77116773 -->
+<!-- <link rel="shortcut icon" href="#"> --> <!-- This will make a second request from the same URL -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+{{- end }}
