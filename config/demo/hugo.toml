@@ -37,7 +37,7 @@ targetBlank = true
 
 [[menus.footer]]
 identifier = "rss"
-name       = "Feeds"
+name       = "Feed"
 pageRef    = "/"
 weight     = 5
 [[menus.footer.params]]
