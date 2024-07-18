@@ -3,7 +3,8 @@
 /******************************************************************************/
 
 :root {
-    --max-width: 800px;
+    --font-size: 20px;
+    --max-width: 50em;
 
     --background-light: #efefef;
     --background-pre-light: #cdcdcd;
@@ -16,7 +17,10 @@
     --color-secondary-dark: #a1a1a1;
 }
 
-html { overflow-y: scroll; }
+html {
+    overflow-y: scroll;
+    font-size: var(--font-size);
+}
 body { min-height: 100vh; }
 img { width: 100%; }
 figure { margin: 0; }
