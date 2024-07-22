@@ -72,20 +72,6 @@ pre code {
     text-decoration: none;
 }
 
-.corner-indicator {
-    display: flex;
-    justify-content: space-between;
-}
-.corner-indicator::before,
-.corner-indicator::after
-{
-    content: "";
-    width: 5px;
-    border-bottom: 5px solid;
-}
-.corner-top { margin-bottom: 0.5em; }
-.corner-bottom { margin-top: 0.5em; }
-
 .post-list {
     display: flex;
     flex-flow: row wrap;
@@ -162,18 +148,13 @@ a.post-tag:hover { text-decoration: none; }
     .toc-anchor { display: block; }
 }
 
-@media (min-width: 51em) {
+@media (min-width: 63em) {
     .post-list.double-columns .post-card {
         max-width: 23em;
     }
 }
 
-@media (max-width: 48em) {
-    .corner-indicator { display: none; }
-}
-
 @media print {
-    .corner-indicator,
     .poster,
     .toc-anchor,
     #header,

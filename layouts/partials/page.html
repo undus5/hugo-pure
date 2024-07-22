@@ -46,7 +46,7 @@
         {{ if $src.target }}
             {{ $tgt = $src.target }}
         {{ end }}
-        <a class="post-tag" href="{{- $src.url -}}" target="{{- $tgt -}}" rel="noreferrer">
+        <a class="post-tag" href="{{- $src.url | safeURL -}}" target="{{- $tgt -}}" rel="noreferrer">
         {{- $src.title -}}
         </a>
     {{- end }}
