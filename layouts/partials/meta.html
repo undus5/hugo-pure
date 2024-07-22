@@ -16,6 +16,8 @@
 
     {{- with .Description }}
         {{- $description = . }}
+    {{- else }}
+        {{- $description = "" }}
     {{- end }}
 
     {{- $image := .Resources.Get "poster.webp" }}
