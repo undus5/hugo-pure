@@ -14,8 +14,8 @@
 {{- if .IsPage }}
     {{- $previewTitle = .Title }}
 
-    {{- with .Description }}
-        {{- $description = . }}
+    {{- with .Summary }}
+        {{- $description = plainify . }}
     {{- else }}
         {{- $description = "" }}
     {{- end }}
