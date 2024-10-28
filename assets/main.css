@@ -215,7 +215,7 @@ a.post-tag:hover,
     color: var(--color-light)
 }
 .pagination .pure-button-active {
-    background-color: var(--background-pre-light);
+    background-color: var(--background-secondary-light);
 }
 
 @media (min-width: 48em) {
