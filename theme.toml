@@ -1,12 +1,12 @@
 name     = "hugo-pure"
 license  = "MIT"
 homepage = "https://github.com/undus5/hugo-pure"
-demosite = "https://undus5.github.io/hugo-pure/"
+demosite = "https://hugo-pure.undus.net"
 tags     = ["Blog", "Minimal", "Responsive", "Light", "Dark", "Multilingual"]
 
 [author]
 name = "Undus"
-homepage = "https://www.undus.net"
+homepage = "https://undus.net"
 
 [module]
 [module.hugoVersion]
