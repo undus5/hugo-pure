@@ -130,12 +130,12 @@ a.post-tag:hover { text-decoration: none; }
 .toc-wrapper {
     position: absolute;
     right: -10em;
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
-#TableOfContents ul {
-    margin: 0;
-    padding: 0;
-    width: 8em;
+#TableOfContents li ul {
+    padding-left: 0.3em;
 }
 #TableOfContents a {
     text-decoration: none;
