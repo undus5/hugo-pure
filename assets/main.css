@@ -130,7 +130,7 @@ a.post-tag:hover { text-decoration: none; }
 .toc-wrapper {
     position: absolute;
     right: -10em;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
 }
 
