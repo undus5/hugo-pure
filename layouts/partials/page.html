@@ -65,16 +65,7 @@
 {{- end }}
 
 {{- if and (ne $t "list") $p.Content }}
-<div class="post-content">
-{{- if $p.Param "showToc" }}
-    <div class="toc-anchor">
-        <div class="toc-wrapper">
-        {{- $p.TableOfContents }}
-        </div>
-    </div>
-{{- end }}
-{{- $p.Content }}
-</div>
+<div class="post-content">{{- $p.Content }}</div>
 {{- end }}
 
 {{- if and (ne $t "list") $p.Lastmod (ne $p.Lastmod $p.Date) }}
@@ -85,4 +76,3 @@
 </span>
 </p>
 {{- end }}
-
