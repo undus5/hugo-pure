@@ -64,6 +64,12 @@
 <div class="post-content">{{- $p.Summary }}</div>
 {{- end }}
 
+{{- if and (ne $t "list") ($p.Param "showToc") }}
+<div class="toc-wrapper-page">
+    {{- $p.TableOfContents }}
+</div>
+{{- end }}
+
 {{- if and (ne $t "list") $p.Content }}
 <div class="post-content">{{- $p.Content }}</div>
 {{- end }}
