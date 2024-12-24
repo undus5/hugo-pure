@@ -60,6 +60,15 @@
 </div>
 {{- end }}
 
+{{- if and (ne $t "list") $p.Lastmod (ne $p.Lastmod $p.Date) }}
+<p>
+<span class="post-meta">
+    {{- or (i18n "LAST_MODIFIED") "Last Modified" | safeHTML }}:
+    {{ $p.Lastmod.Format "2006-01-02 15:04 UTC-07:00" }}
+</span>
+</p>
+{{- end }}
+
 {{- if and (eq $t "list") ($p.Param "showSummary") }}
 <div class="post-content">{{- $p.Summary }}</div>
 {{- end }}
@@ -72,13 +81,4 @@
 
 {{- if and (ne $t "list") $p.Content }}
 <div class="post-content">{{- $p.Content }}</div>
-{{- end }}
-
-{{- if and (ne $t "list") $p.Lastmod (ne $p.Lastmod $p.Date) }}
-<p>
-<span class="post-meta">
-    {{- or (i18n "LAST_MODIFIED") "Last Modified" | safeHTML }}:
-    {{ $p.Lastmod.Format "2006-01-02 15:04 UTC-07:00" }}
-</span>
-</p>
 {{- end }}
