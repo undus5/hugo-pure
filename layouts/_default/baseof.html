@@ -20,20 +20,18 @@
 </head>
 <body>
 
-<div id="body-wrapper">
-    <div id="left-wrapper">
-        {{ block "left-side" . }}{{ end }}
+<div id="header-wrapper">
+    {{ partial "header.html" . }}
+</div>
+
+<div id="main-wrapper">
+    <div id="main">
+        {{ block "main" . }}{{ end }}
     </div>
-    <div id="center-wrapper">
-        {{ partial "header.html" . }}
-        <div id="main">
-            {{ block "main" . }}{{ end }}
-        </div>
-        {{ partial "footer.html" . }}
-    </div>
-    <div id="right-wrapper">
-        {{ block "right-side" . }}{{ end }}
-    </div>
+</div>
+
+<div id="footer-wrapper">
+    {{ partial "footer.html" . }}
 </div>
 
 {{- block "js" . }}{{- end }}

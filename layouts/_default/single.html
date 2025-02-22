@@ -2,18 +2,3 @@
     {{ partial "page.html" (dict "page" . "type" "single") }}
 {{ end }}
 
-{{ define "left-side" }}
-    {{- if .Param "showToc" }}
-    <div class="toc-wrapper hide">
-        {{- .TableOfContents }}
-    </div>
-    {{- end }}
-{{ end }}
-
-{{ define "right-side" }}
-    {{- if .Param "showToc" }}
-    <div class="toc-wrapper">
-        {{- .TableOfContents }}
-    </div>
-    {{- end }}
-{{ end }}
