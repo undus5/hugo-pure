@@ -1,7 +1,7 @@
 {{ $pctx := .pctx }}
 {{ $entry := .entry }}
 
-{{ $url := .entry.URL }}
+{{ $url := $entry.URL }}
 {{ if $entry.Page }}
     {{ $page := $entry.Page }}
     {{ if $page.IsTranslated }}

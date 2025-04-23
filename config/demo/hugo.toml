@@ -28,12 +28,10 @@ pageRef    = "/tags/"
 weight     = 9
 
 [[menus.footer]]
-identifier = "github"
-name       = "Github"
-url        = "https://github.com/undus5/hugo-pure"
-weight     = 7
-[[menus.footer.params]]
-targetBlank = true
+name        = "🄯2023"
+weight      = 1
+[menus.footer.params]
+type        = "plain"
 
 [[menus.footer]]
 identifier = "rss"
@@ -41,5 +39,16 @@ name       = "Feed"
 pageRef    = "/"
 weight     = 5
 [[menus.footer.params]]
+type        = "link"
 targetBlank = true
 format      = "rss"
+
+[[menus.footer]]
+identifier = "github"
+name       = "Github"
+url        = "https://github.com/undus5/hugo-pure"
+weight     = 7
+[[menus.footer.params]]
+type        = "link"
+targetBlank = true
+

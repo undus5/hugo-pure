@@ -71,6 +71,17 @@ url   = "https://gohugo.io/about/"
 The favicon is empty by default, if needed, put one into `assets/favicon.png` in your own project,
 it will be loaded automatically.
 
+### Footer Menu
+
+Following are extra parameters for the footer menu, refer to `config/demo/hugo.toml` for use case.
+
+```
+[[menus.footer.params]]
+type        = "link" or "plain"
+targetBlank = true
+format      = "rss"
+```
+
 ### CSS & JS
 
 If you want to overwrite CSS or add JS, just create some partial templates

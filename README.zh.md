@@ -70,6 +70,17 @@ url   = "https://gohugo.io/about/"
 
 favicon 位置在 `assets/favicon.png`, 默认为空, 如果文件存在将会自动加载.
 
+### 底部菜单
+
+以下是底部菜单的额外配置项, 使用方法参照 `config/demo/hugo.toml`.
+
+```
+[[menus.footer.params]]
+type        = "link" or "plain"
+targetBlank = true
+format      = "rss"
+```
+
 ### CSS & JS
 
 如果你想要覆盖自己的 CSS 或者 添加 JS 交互, 只需要在你的项目里创建带有指定
