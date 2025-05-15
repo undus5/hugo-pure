@@ -6,16 +6,16 @@
     --font-size: 18px;
     --max-content-width: 50em;
 
-    --background-body-light: #ffffff;
-    --background-light: #efefef;
-    --background-pre-light: #cdcdcd;
-    --color-light: #111;
+    --background-page-light: #ffffff;
+    --background-main-light: #efefef;
+    --color-text-light: #111111;
+    --color-decoration-light: #cdcdcd;
     --color-secondary-light: #606060;
 
-    --background-body-dark: #000000;
-    --background-dark: #1c1c1c;
-    --background-pre-dark: #323232;
-    --color-dark: #eee;
+    --background-page-dark: #000000;
+    --background-main-dark: #1c1c1c;
+    --color-text-dark: #efefef;
+    --color-decoration-dark: #323232;
     --color-secondary-dark: #a1a1a1;
 }
 
@@ -186,24 +186,24 @@ nav#TableOfContents li ul {
 /******************************************************************************/
 
 body {
-    background-color: var(--background-body-light);
-    color: var(--color-light);
+    background-color: var(--background-page-light);
+    color: var(--color-text-light);
 }
-#main { background-color: var(--background-light); }
-pre { background-color: var(--background-pre-light); }
+#main { background-color: var(--background-main-light); }
+pre { background-color: var(--background-page-light); }
 
 .pure-menu-link:hover {
-    background-color: var(--background-pre-light);
+    background-color: var(--color-decoration-light);
 }
 
 .post-card {
-    border-color: var(--background-pre-light);
+    border-color: var(--color-decoration-light);
 }
 .post-title a,
 .post-content a,
 #TableOfContents a
 {
-    color: var(--color-light);
+    color: var(--color-text-light);
 }
 
 .post-meta,
@@ -219,21 +219,21 @@ pre { background-color: var(--background-pre-light); }
 a.post-tag:hover,
 #footer a:hover
 {
-    color: var(--color-light);
+    color: var(--color-text-light);
 }
 
 .poster img,
 .post-content img
 {
-    border-color: var(--background-pre-light);
+    border-color: var(--color-decoration-light);
 }
 .poster:hover img {
-    border-color: var(--color-light);
+    border-color: var(--color-text-light);
 }
 
 .pagination .pure-button {
-    background-color: var(--background-pre-light);
-    color: var(--color-light)
+    background-color: var(--color-decoration-light);
+    color: var(--color-text-light)
 }
 .pagination .pure-button-active {
     background-color: var(--background-secondary-light);
@@ -241,7 +241,7 @@ a.post-tag:hover,
 
 @media (min-width: 48em) {
     .post-list {
-        border-color: var(--background-pre-light);
+        border-color: var(--color-decoration-light);
     }
 }
 
@@ -252,29 +252,29 @@ a.post-tag:hover,
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: var(--background-body-dark);
-        color: var(--color-dark);
+        background-color: var(--background-page-dark);
+        color: var(--color-text-dark);
     }
-    #main { background-color: var(--background-dark); }
-    pre { background-color: var(--background-pre-dark); }
+    #main { background-color: var(--background-main-dark); }
+    pre { background-color: var(--background-page-dark); }
 
     .pure-menu-selected .pure-menu-link,
     .pure-menu-selected .pure-menu-link:visited
     {
-        color: var(--color-dark);
+        color: var(--color-text-dark);
     }
     .pure-menu-link:hover {
-        background-color: var(--background-pre-dark);
+        background-color: var(--color-decoration-dark);
     }
 
     .post-card {
-        border-color: var(--background-pre-dark);
+        border-color: var(--color-decoration-dark);
     }
     .post-title a,
     .post-content a,
     #TableOfContents a
     {
-        color: var(--color-dark);
+        color: var(--color-text-dark);
     }
 
     .post-meta,
@@ -290,21 +290,21 @@ a.post-tag:hover,
     a.post-tag:hover,
     #footer a:hover
     {
-        color: var(--color-dark);
+        color: var(--color-text-dark);
     }
 
     .poster img,
     .post-content img
     {
-        border-color: var(--background-pre-dark);
+        border-color: var(--color-decoration-dark);
     }
     .poster:hover img {
-        border-color: var(--color-dark);
+        border-color: var(--color-text-dark);
     }
 
     .pagination .pure-button {
-        background-color: var(--background-pre-dark);
-        color: var(--color-dark)
+        background-color: var(--color-decoration-dark);
+        color: var(--color-text-dark)
     }
     .pagination .pure-button-active {
         background-color: var(--color-secondary-dark);
@@ -312,7 +312,7 @@ a.post-tag:hover,
 
     @media (min-width: 48em) {
         .post-list {
-            border-color: var(--background-pre-dark);
+            border-color: var(--color-decoration-dark);
         }
     }
 }

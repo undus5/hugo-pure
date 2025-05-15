@@ -1,18 +1,13 @@
-# default configuration
-
-baseURL = "/"
 title   = "Hugo Theme: hugo-pure"
+baseURL = "/"
 
 languageCode   = "en-us"
 hasCJKLanguage = true
 
 [markup]
-_merge    = "deep"
 [markup.highlight]
-_merge    = "deep"
 noClasses = false
 [markup.tableOfContents]
-_merge    = "deep"
 endLevel  = 2
 
 [menus]
