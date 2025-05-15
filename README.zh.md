@@ -123,3 +123,8 @@ block name 的 partial template 即可, 举例说明:
     <script src="{{- $js.RelPermalink -}}"></script>
 {{ end }}
 ```
+
+## 鸣谢
+
+https://pure-css.github.io/
+

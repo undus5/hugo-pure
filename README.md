@@ -124,3 +124,8 @@ Or `layouts/partials/myassets.html`, `assets/mystyle.css`, `assets/myscript.js`
     <script src="{{- $js.RelPermalink -}}"></script>
 {{ end }}
 ```
+
+## Credit
+
+https://pure-css.github.io/
+
