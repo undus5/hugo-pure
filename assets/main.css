@@ -17,11 +17,14 @@
     --color-text-dark: #efefef;
     --color-decoration-dark: #323232;
     --color-secondary-dark: #a1a1a1;
+
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html {
     overflow-y: scroll;
     font-size: var(--font-size);
+    font-family: var(--system-ui);
 }
 body { min-height: 100vh; }
 img { width: 100%; }
