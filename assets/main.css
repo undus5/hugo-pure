@@ -3,7 +3,7 @@
 /******************************************************************************/
 
 :root {
-    --font-size: 18px;
+    --font-size: 20px;
     --max-content-width: 50em;
 
     --background-page-light: #ffffff;
@@ -18,6 +18,8 @@
     --color-decoration-dark: #323232;
     --color-secondary-dark: #a1a1a1;
 
+    --font-weight-thin: 300;
+    --font-weight-semibold: 600;
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -27,15 +29,43 @@ html {
     font-family: var(--system-ui);
 }
 body { min-height: 100vh; }
-img { width: 100%; }
 figure { margin: 0; }
-.prevent-default { pointer-events: none; }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
+hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  height: .25em;
+  padding: 0;
+  margin: 1.5em 0;
+  border: 0;
+}
+
+code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+}
 pre code {
     display: block;
     overflow-x: auto;
     padding: 1em;
 }
+blockquote {
+    margin: 0;
+    padding: 0 1em;
+    border-left: .25em solid;
+}
+table {
+    margin-bottom: 1em;
+}
+
 .pure-button { border-radius: 0; }
 
 #header, #footer, #main {
@@ -90,13 +120,13 @@ pre code {
 }
 .post-card__title {
     margin: 0;
-    margin-bottom: 0.8em;
+    margin-bottom: .8em;
 }
 div.post-meta { margin-top: 1em; }
 a.post-tag:hover { text-decoration: none; }
 
 .poster {
-    margin-bottom: 0.8em;
+    margin-bottom: .8em;
 }
 .poster img {
     border: 1px solid;
@@ -109,12 +139,12 @@ a.post-tag:hover { text-decoration: none; }
 .post-title a:hover { text-decoration: underline; }
 .post-title h1 {
     margin-top: 0;
-    margin-bottom: 0.25em;
+    margin-bottom: .25em;
 }
 .post-title h2 {
-    font-weight: 300;
+    font-weight: var(--font-weight-thin);
     margin-top: 0;
-    margin-bottom: 0.25em;
+    margin-bottom: .25em;
 }
 .post-content {
     line-height: 1.6em;
@@ -135,11 +165,11 @@ nav#TableOfContents li {
     list-style-type: none;
 }
 nav#TableOfContents li ul {
-    padding-left: 0.7em;
+    padding-left: .7em;
 }
 
 .toc-wrapper li ul {
-    padding-left: 0.4em;
+    padding-left: .4em;
 }
 
 /* large screen */
@@ -192,12 +222,29 @@ body {
     background-color: var(--background-page-light);
     color: var(--color-text-light);
 }
-#main { background-color: var(--background-main-light); }
-pre { background-color: var(--background-page-light); }
+
+hr { background-color: var(--color-decoration-light); }
+code { background-color: var(--background-page-light); }
+blockquote {
+    color: var(--color-secondary-light);
+    border-color: var(--color-decoration-light);
+}
+table {
+    background-color: var(--background-page-light);
+}
+table thead {
+    color: var(--color-text-light);
+    background-color: var(--background-page-light);
+}
+table, table th, table td {
+    border-color: var(--color-decoration-light);
+}
 
 .pure-menu-link:hover {
     background-color: var(--color-decoration-light);
 }
+
+#main { background-color: var(--background-main-light); }
 
 .post-card {
     border-color: var(--color-decoration-light);
@@ -258,8 +305,23 @@ a.post-tag:hover,
         background-color: var(--background-page-dark);
         color: var(--color-text-dark);
     }
-    #main { background-color: var(--background-main-dark); }
-    pre { background-color: var(--background-page-dark); }
+
+    hr { background-color: var(--color-decoration-dark); }
+    code { background-color: var(--background-page-dark); }
+    blockquote {
+        color: var(--color-secondary-dark);
+        border-color: var(--color-decoration-dark);
+    }
+    table {
+        background-color: var(--background-page-dark);
+    }
+    table thead {
+        color: var(--color-text-dark);
+        background-color: var(--background-page-dark);
+    }
+    table, table th, table td {
+        border-color: var(--color-decoration-dark);
+    }
 
     .pure-menu-selected .pure-menu-link,
     .pure-menu-selected .pure-menu-link:visited
@@ -269,6 +331,8 @@ a.post-tag:hover,
     .pure-menu-link:hover {
         background-color: var(--color-decoration-dark);
     }
+
+    #main { background-color: var(--background-main-dark); }
 
     .post-card {
         border-color: var(--color-decoration-dark);

@@ -6,7 +6,10 @@
 
     {{- $css := slice }}
     <!-- https://purecss.io/ -->
-    {{- $css = $css | append (resources.Get "pure.css") }}
+    {{- $css = $css | append (resources.Get "purecss-custom/base.css") }}
+    {{- $css = $css | append (resources.Get "purecss-custom/buttons.css") }}
+    {{- $css = $css | append (resources.Get "purecss-custom/menus.css") }}
+    {{- $css = $css | append (resources.Get "purecss-custom/tables.css") }}
     <!-- main.css -->
     {{- $css = $css | append (resources.Get "main.css") }}
     {{- $css = $css | append (resources.Get "syntax-light.css") }}
