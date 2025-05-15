@@ -16,13 +16,13 @@ title        = "Hugo 主题: hugo-pure"
 
 [menus]
 [[menus.main]]
-identifier = "menu1"
+identifier = "MENU1"
 name       = "Home"
 pageRef    = "/"
 weight     = 1
 
 [[menus.main]]
-identifier = "menu2"
+identifier = "MENU2"
 name       = "Tags"
 pageRef    = "/tags/"
 weight     = 9

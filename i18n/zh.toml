@@ -1,6 +1,7 @@
 # i18n zh
 
 LAST_MODIFIED = "最后更新"
+CREATED = "发布"
 DEMOTAG = "演示标签"
 
 # Demo

@@ -34,8 +34,24 @@
 
 {{- if or $p.Date $p.Params.sources $p.Params.tags }}
 <div class="post-meta">
-    {{- with $p.Date }}
-        <span>{{- .Format "2006-01-02" -}}</span>
+    {{- if $p.Lastmod }}
+        {{- if eq $t "list" }}
+            {{- if $p.Lastmod }}
+                <span>{{- $p.Lastmod.Format "2006-01-02" -}}</span>
+            {{- else if $p.Date }}
+                <span>{{- $p.Date.Format "2006-01-02" -}}</span>
+            {{- end }}
+        {{- else }}
+            <span>{{- $p.Lastmod.Format "2006-01-02" -}}</span>
+            <span>({{- or (i18n "LAST_MODIFIED_COMPACT") "LastModified" | safeHTML }})</span>
+            {{- if ne $p.Lastmod $p.Date }}
+                &nbsp;
+                <span>{{- $p.Date.Format "2006-01-02" -}}</span>
+                <span>({{- or (i18n "CREATED") "Created" | safeHTML }})</span>
+            {{- end }}
+        {{- end }}
+    {{- else if $p.Date }}
+        <span>{{- $p.Date.Format "2006-01-02" -}}</span>
     {{- end }}
 
     {{- if $p.Params.sources }}
@@ -60,6 +76,7 @@
 </div>
 {{- end }}
 
+<!--
 {{- if and (ne $t "list") $p.Lastmod (ne $p.Lastmod $p.Date) }}
 <p>
 <span class="post-meta">
@@ -68,6 +85,7 @@
 </span>
 </p>
 {{- end }}
+-->
 
 {{- if and (eq $t "list") ($p.Param "showSummary") }}
 <div class="post-content">{{- $p.Summary }}</div>

@@ -17,7 +17,7 @@
         href="{{- $url -}}"
         {{ with .Params.targetBlank }}target="_blank"{{ end -}}
     >
-        {{- or (i18n (upper .Identifier)) .Name | safeHTML -}}
+        {{- or (i18n .Identifier) .Name | safeHTML -}}
     </a>
 </li>
 {{- end }}
