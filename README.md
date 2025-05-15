@@ -49,7 +49,7 @@ doubleColumns = true   # list style, also available in global hugo.toml
 +++
 showToc     = true       # enable table of contents
 showSummary = true       # show summary on list
-type        = "hidden"   # hidden from any list (home, section, rss)
+hidden      = true       # hidden from any list (home, section, rss)
 subtitle    = "Foo Bar"  # subtitle (contributed by @carmenbianca, thanks)
 
 # add external source links beside tags

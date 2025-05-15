@@ -1,4 +1,4 @@
 +++
-title = "Search"
-type  = "hidden"
+title  = "Search"
+hidden = true
 +++

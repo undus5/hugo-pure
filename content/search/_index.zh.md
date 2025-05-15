@@ -1,4 +1,4 @@
 +++
-title = "搜索"
-type  = "hidden"
+title  = "搜索"
+hidden = true
 +++

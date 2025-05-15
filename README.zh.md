@@ -49,7 +49,7 @@ doubleColumns = true   # 列表风格 (单列/双列), 也可在 hugo.toml 全�
 +++
 showToc     = true       # 开启章节索引
 showSummary = true       # 在列表中显示摘要
-type        = "hidden"   # 不在任何列表里显示 (home, section, rss)
+hidden      = true       # 不在任何列表里显示 (home, section, rss)
 subtitle    = "Foo Bar"  # 副标题 (由 @carmenbianca 贡献, 感谢)
 
 # 添加来源外链, 与标签同列显示

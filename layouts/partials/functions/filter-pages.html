@@ -1,6 +1,6 @@
 {{ $pages := . }}
 
-{{ $pages = where $pages "Type" "!=" "hidden" -}}
+{{ $pages = where $pages "Params.hidden" "!=" true -}}
 
 {{ if ne hugo.Environment "demo" }}
 {{ $pages = where $pages "Section" "!=" "demo" -}}
