@@ -43,8 +43,8 @@
             {{- end }}
         {{- else }}
             <span>{{- $p.Lastmod.Format "2006-01-02" -}}</span>
-            <span>({{- or (i18n "LAST_MODIFIED_COMPACT") "LastModified" | safeHTML }})</span>
             {{- if ne $p.Lastmod $p.Date }}
+                <span>({{- or (i18n "LAST_MODIFIED") "LastModified" | safeHTML }})</span>
                 &nbsp;
                 <span>{{- $p.Date.Format "2006-01-02" -}}</span>
                 <span>({{- or (i18n "CREATED") "Created" | safeHTML }})</span>
