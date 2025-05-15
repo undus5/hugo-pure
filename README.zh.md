@@ -1,8 +1,10 @@
 # hugo-pure
 
-[English](https://github.com/undus5/hugo-pure/)|中文
+[English](https://github.com/undus5/hugo-pure/),中文
 
 一款简洁的 [Hugo](https://gohugo.io) 主题, [在线演示](https://hugo-pure.undus.net)
+
+兼容性: 测试通过 hugo v0.147.3
 
 ## 特性
 

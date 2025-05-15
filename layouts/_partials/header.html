@@ -27,7 +27,7 @@
 <div class="translation-menu">
 {{- if .IsTranslated }}
 {{ range $i, $p := .AllTranslations }}
-    {{- if gt $i 0 }}|{{ end }}
+    {{- if gt $i 0 }},{{ end }}
     {{- if eq $p.Lang $pctx.Lang -}}
         <span>{{- $p.Language.LanguageName -}}</span>
     {{- else -}}

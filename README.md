@@ -1,8 +1,10 @@
 # hugo-pure
 
-English|[中文](https://github.com/undus5/hugo-pure/blob/main/README.zh.md)
+English,[中文](https://github.com/undus5/hugo-pure/blob/main/README.zh.md)
 
 A simple and clean [Hugo](https://gohugo.io) theme, Live Demo: https://hugo-pure.undus.net
+
+Compatibility: tested on hugo v0.147.3
 
 ## Features
 
