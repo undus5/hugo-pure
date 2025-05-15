@@ -8,7 +8,7 @@ hasCJKLanguage = true
 [markup.highlight]
 noClasses = false
 [markup.tableOfContents]
-endLevel  = 2
+endLevel  = 3
 
 [menus]
 

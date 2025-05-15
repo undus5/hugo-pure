@@ -5,6 +5,7 @@ lastmod     = 2023-02-22T11:49:46+08:00
 date        = 2023-02-20T11:49:46+08:00
 tags        = ["DemoTag"]
 showSummary = true
+showToc     = true
 weight      = 100
 [[sources]]
 title = "来源"
@@ -23,13 +24,19 @@ create a new HTML file every time an end user requests a page.
 
 <!--more-->
 
+## 段落 1
+
 Over time, dynamic site generators were programmed to cache their HTML files to
 prevent unnecessary delays in delivering pages to end users.
 A cached page is a static version of a web page.
 
+## 段落 2
+
 Hugo takes caching a step further and all HTML files are rendered on your computer.
 You can review the files locally before copying them to the computer hosting the HTTP server.
 Since the HTML files aren’t generated dynamically, we say that Hugo is a static site generator.
+
+## 段落 3
 
 This has many benefits. The most noticeable is performance.
 HTTP servers are very good at sending files—so good, in fact,
