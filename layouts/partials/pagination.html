@@ -1,10 +1,10 @@
 {{- $page := . }}
 
 <div aria-label="Pagination" class="pagination" role="group">
-    {{- partial "partials/inline/pagination" $page }}
+    {{- partial "inline/pagination/default.html" $page }}
 </div>
 
-{{- define "partials/inline/pagination" }}
+{{- define "_partials/inline/pagination/default.html" }}
 {{- with .Paginator }}
 
     {{- $currentPageNumber := .PageNumber }}
@@ -51,4 +51,4 @@
     {{- end }}
 
 {{- end }}
-{{- end -}}
+{{- end }}

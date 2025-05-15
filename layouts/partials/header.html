@@ -25,7 +25,7 @@
 </ul>
 
 <div class="translation-menu">
-{{- if and .Site.IsMultiLingual .IsTranslated }}
+{{- if .IsTranslated }}
 {{ range $i, $p := .AllTranslations }}
     {{- if gt $i 0 }}|{{ end }}
     {{- if eq $p.Lang $pctx.Lang -}}
