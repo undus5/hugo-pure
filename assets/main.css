@@ -3,7 +3,7 @@
 /******************************************************************************/
 
 :root {
-    --font-size: 20px;
+    --font-size: 18px;
     --max-content-width: 50em;
 
     --background-page-light: #ffffff;
@@ -40,14 +40,14 @@ hr {
   box-sizing: content-box;
   overflow: hidden;
   background: transparent;
-  height: .25em;
+  height: 4px;
   padding: 0;
   margin: 1.5em 0;
   border: 0;
 }
 
 code {
-  padding: .2em .4em;
+  padding: 4px 8px;
   margin: 0;
   font-size: 85%;
   white-space: break-spaces;
@@ -60,7 +60,7 @@ pre code {
 blockquote {
     margin: 0;
     padding: 0 1em;
-    border-left: .25em solid;
+    border-left: 4px solid;
 }
 table {
     margin-bottom: 1em;
@@ -89,8 +89,6 @@ table {
 
 #footer {
     padding: 1em 1em 2em;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -103,8 +101,6 @@ table {
 #main {
     padding: 2em 1em;
     word-wrap: break-word;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -120,13 +116,13 @@ table {
 }
 .post-card__title {
     margin: 0;
-    margin-bottom: .8em;
+    margin-bottom: 1em;
 }
 div.post-meta { margin-top: 1em; }
 a.post-tag:hover { text-decoration: none; }
 
 .poster {
-    margin-bottom: .8em;
+    margin-bottom: 1em;
 }
 .poster img {
     border: 1px solid;
@@ -139,15 +135,15 @@ a.post-tag:hover { text-decoration: none; }
 .post-title a:hover { text-decoration: underline; }
 .post-title h1 {
     margin-top: 0;
-    margin-bottom: .25em;
+    margin-bottom: 4px;
 }
 .post-title h2 {
     font-weight: var(--font-weight-thin);
     margin-top: 0;
-    margin-bottom: .25em;
+    margin-bottom: 4px;
 }
 .post-content {
-    line-height: 1.6em;
+    line-height: 1.5em;
     margin-top: 1em;
 }
 .post-content a:hover {
@@ -159,17 +155,17 @@ a.post-tag:hover { text-decoration: none; }
 
 nav#TableOfContents ul {
     padding: 0;
-    line-height: 1.3em;
+    line-height: 1em;
 }
 nav#TableOfContents li {
     list-style-type: none;
 }
 nav#TableOfContents li ul {
-    padding-left: .7em;
+    padding-left: 12px;
 }
 
 .toc-wrapper li ul {
-    padding-left: .4em;
+    padding-left: 8px;
 }
 
 /* large screen */
