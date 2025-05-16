@@ -155,7 +155,7 @@ a.post-tag:hover { text-decoration: none; }
 
 nav#TableOfContents ul {
     padding: 0;
-    line-height: 1em;
+    line-height: 1.2em;
 }
 nav#TableOfContents li {
     list-style-type: none;
