@@ -3,6 +3,7 @@ baseURL = "/"
 
 languageCode   = "en-us"
 hasCJKLanguage = true
+# paginatation.pagerSize = 6
 
 [markup]
 [markup.highlight]

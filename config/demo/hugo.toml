@@ -1,6 +1,7 @@
 # env: demo
 
 defaultContentLanguage = 'en'
+paginatation.pagerSize = 1
 
 [languages]
 
