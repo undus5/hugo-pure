@@ -1,6 +1,7 @@
 # env: demo
 
 defaultContentLanguage = 'en'
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [pagination]
 pagerSize = 1
