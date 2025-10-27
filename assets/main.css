@@ -42,12 +42,12 @@ hr {
   background: transparent;
   height: 4px;
   padding: 0;
-  margin: 1.5em 0;
+  margin: 1.6em 0;
   border: 0;
 }
 
 code {
-  padding: 4px 8px;
+  padding: 2px 6px 4px;
   margin: 0;
   font-size: 85%;
   white-space: break-spaces;
@@ -143,7 +143,7 @@ a.post-tag:hover { text-decoration: none; }
     margin-bottom: 4px;
 }
 .post-content {
-    line-height: 1.5em;
+    line-height: 1.6em;
     margin-top: 1em;
 }
 .post-content a:hover {
