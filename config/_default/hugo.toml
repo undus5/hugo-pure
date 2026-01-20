@@ -3,6 +3,7 @@ baseURL = "/"
 
 languageCode   = "en-us"
 hasCJKLanguage = true
+# enableRobotsTXT = true
 
 # [pagination]
 # pagerSize = 1
