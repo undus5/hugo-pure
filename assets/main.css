@@ -128,8 +128,8 @@ a.post-tag:hover { text-decoration: none; }
     justify-content: center;
     align-items: center;
 }
-.poster img {
-    max-height: 13em;
+.poster-img {
+    max-height: 27em;
     object-fit: cover;
 }
 
@@ -204,6 +204,9 @@ nav#TableOfContents li ul {
 @media (min-width: 56em) {
     .post-list.double-columns .post-card {
         max-width: 23em;
+    }
+    .poster-img {
+        max-height: 13em;
     }
 }
 
