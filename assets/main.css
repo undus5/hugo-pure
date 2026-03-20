@@ -123,9 +123,13 @@ a.post-tag:hover { text-decoration: none; }
 
 .poster {
     margin-bottom: 1em;
+    border:2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .poster img {
-    border: 1px solid;
+    max-height: 13em;
     object-fit: cover;
 }
 
@@ -150,7 +154,8 @@ a.post-tag:hover { text-decoration: none; }
     text-decoration: none;
 }
 .post-content img {
-    border: 1px solid;
+    max-height: 27em;
+    border: 2px solid;
 }
 
 nav#TableOfContents ul {
@@ -268,12 +273,12 @@ a.post-tag:hover,
     color: var(--color-text-light);
 }
 
-.poster img,
+.poster,
 .post-content img
 {
     border-color: var(--color-decoration-light);
 }
-.poster:hover img {
+.poster:hover {
     border-color: var(--color-text-light);
 }
 
@@ -356,12 +361,12 @@ a.post-tag:hover,
         color: var(--color-text-dark);
     }
 
-    .poster img,
+    .poster,
     .post-content img
     {
         border-color: var(--color-decoration-dark);
     }
-    .poster:hover img {
+    .poster:hover {
         border-color: var(--color-text-dark);
     }
 
