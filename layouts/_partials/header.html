@@ -29,9 +29,9 @@
 {{ range $i, $p := .AllTranslations }}
     {{- if gt $i 0 }},{{ end }}
     {{- if eq $p.Lang $pctx.Lang -}}
-        <span>{{- $p.Language.LanguageName -}}</span>
+        <span>{{- $p.Language.Label -}}</span>
     {{- else -}}
-        <a href="{{- $p.RelPermalink -}}">{{- $p.Language.LanguageName -}}</a>
+        <a href="{{- $p.RelPermalink -}}">{{- $p.Language.Label -}}</a>
     {{- end }}
 {{- end }}
 {{- end }}

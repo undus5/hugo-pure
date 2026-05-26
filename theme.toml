@@ -11,4 +11,4 @@ homepage = "https://undus.net"
 [module]
 [module.hugoVersion]
 extended = false
-min      = "0.147.3"
+min      = "0.161.0"

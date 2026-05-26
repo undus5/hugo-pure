@@ -1,6 +1,7 @@
 # env: demo
 
 defaultContentLanguage = 'en'
+hasCJKLanguage = true
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [pagination]
@@ -9,12 +10,12 @@ pagerSize = 1
 [languages]
 
 [languages.en]
-languageName = "En"
+label = "En"
 weight       = 1
 title        = "Hugo Theme: hugo-pure"
 
 [languages.zh]
-languageName = "中"
+label = "中"
 weight       = 3
 title        = "Hugo 主题: hugo-pure"
 
@@ -32,7 +33,7 @@ pageRef    = "/tags/"
 weight     = 9
 
 [[menus.footer]]
-name        = "🄯2023"
+name        = "🄯2023-2026"
 weight      = 1
 [menus.footer.params]
 type        = "plain"
