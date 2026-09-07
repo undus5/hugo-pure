@@ -40,7 +40,7 @@ $ ./demo.sh run
 
 ```
 +++
-paginate      = 1      # number of posts per page
+pageSize      = 5      # number of posts per page
 doubleColumns = true   # list style, also available in global hugo.toml
 +++
 ```

@@ -2,7 +2,7 @@
 
 {{- $pages := partial "functions/get-pages.html" $pctx }}
 
-{{- $pageSize := $pctx.Params.paginate }}
+{{- $pageSize := $pctx.Params.pageSize }}
 {{- if $pageSize }}
     {{- $pages = (.Paginate $pages $pageSize).Pages }}
 {{- else }}
