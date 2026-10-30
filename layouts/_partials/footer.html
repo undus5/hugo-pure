@@ -8,10 +8,10 @@
     {{ else }}
     {{ $url := partial "functions/get-menu-url.html" (dict "pctx" $pctx "entry" $m) }}
     <a href="{{- $url -}}"
-       title="{{- or (i18n (upper $m.Identifier)) $m.Name | safeHTML -}}"
+       title="{{- or (i18n $m.Identifier) $m.Name | safeHTML -}}"
         {{ with $m.Params.targetBlank }}target="_blank"{{ end -}}
     >
-        {{- or (i18n (upper $m.Identifier)) $m.Name | safeHTML -}}
+        {{- or (i18n $m.Identifier) $m.Name | safeHTML -}}
     </a>
     {{- end }}
 {{- end }}

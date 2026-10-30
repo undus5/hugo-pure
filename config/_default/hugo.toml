@@ -3,6 +3,7 @@ baseURL = "/"
 
 defaultContentLanguage = "en"
 hasCJKLanguage = true
+titleCaseStyle = "none"
 # enableRobotsTXT = true
 
 # [pagination]
